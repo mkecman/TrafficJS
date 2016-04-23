@@ -1,0 +1,508 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"ima",
+				"imageData"
+			],
+			[
+				"upda",
+				"updateFlowerStats"
+			],
+			[
+				"back",
+				"backgroundColor"
+			],
+			[
+				"update",
+				"updateUI	(main.js)"
+			],
+			[
+				"ele",
+				"elementCircle"
+			],
+			[
+				"pa",
+				"parse"
+			],
+			[
+				"flo",
+				"flowerModel"
+			],
+			[
+				"load",
+				"loadGallery()	main.js"
+			],
+			[
+				"ga",
+				"galleryData"
+			],
+			[
+				"Flowe",
+				"FlowerGallery	(index.php)"
+			],
+			[
+				"Flo",
+				"FlowerGallery"
+			],
+			[
+				"hei",
+				"min-height"
+			],
+			[
+				"like",
+				"likeFlower	(index.php)"
+			],
+			[
+				"ver",
+				"vertical-align"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"mysql_re",
+				"mysql_real_escape_string"
+			],
+			[
+				"tar",
+				"targetScale"
+			],
+			[
+				"canva",
+				"canvas50	CanvasThumbnail.js"
+			],
+			[
+				"canvas",
+				"canvas"
+			],
+			[
+				"new",
+				"newCanvas"
+			],
+			[
+				"can",
+				"canvasFinal"
+			],
+			[
+				"scale",
+				"scaleDownHalf( originalCanvas )	CanvasThumbnail.js"
+			],
+			[
+				"getCon",
+				"getContext	(Element.js)"
+			],
+			[
+				"make",
+				"make( originalCanvas, newWidth )	canvasthumbnail.js"
+			],
+			[
+				"origi",
+				"originalCanvas	CanvasThumbnail.js"
+			],
+			[
+				"ori",
+				"originalCanvas	CanvasThumbnail.js"
+			],
+			[
+				"flowe",
+				"flowerModel	main.js"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"ali",
+				"align-self"
+			],
+			[
+				"align",
+				"align-content"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"setup",
+				"setupColorPicker( wave )	UI.js"
+			],
+			[
+				"si",
+				"sides	UI.js"
+			],
+			[
+				"slider",
+				"sliderSizeLabel	UI.js"
+			],
+			[
+				"label",
+				"labelObj"
+			],
+			[
+				"pro",
+				"property"
+			],
+			[
+				"Ele",
+				"ElementPolygon"
+			],
+			[
+				"eleme",
+				"elementPolygon"
+			],
+			[
+				"uise",
+				"uiSetupSliders"
+			],
+			[
+				"uis",
+				"uiSetupColorPickers"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"elem",
+				"element"
+			],
+			[
+				"draw",
+				"drawElement"
+			],
+			[
+				"star",
+				"startY"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"wa",
+				"wave"
+			],
+			[
+				"colo",
+				"colors"
+			],
+			[
+				"get",
+				"getContext"
+			],
+			[
+				"dr",
+				"drawFlower"
+			],
+			[
+				"to",
+				"toolbarActive"
+			],
+			[
+				"togg",
+				"toggleToolbar"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"flower",
+				"flower-canvas"
+			],
+			[
+				"flow",
+				"flowerModel"
+			],
+			[
+				"an",
+				"angle"
+			],
+			[
+				"uniqueRandom",
+				"uniqueRandoms"
+			],
+			[
+				"pr",
+				"profiles"
+			],
+			[
+				"gene",
+				"generateProfile"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/www/traffic"
+	],
+	"file_history":
+	[
+		"/C/www/flower/index.php",
+		"/C/www/flower/php/SaveFlower.php",
+		"/C/www/flower/js/FlowerGallery.js",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/jquery.scrollbar-gh-pages/demo/basic.html",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/jquery.scrollbar-gh-pages/includes/style.css",
+		"/C/www/flower/version",
+		"/C/www/flower/js/jqueryphp/jquery.php.js",
+		"/C/www/flower/css/main.css",
+		"/C/www/flower/js/Globals.js",
+		"/C/www/flower/js/Element.js",
+		"/C/www/flower/js/main.js",
+		"/C/www/flower/js/FlowerDrawer.js",
+		"/C/www/flower/js/UI.js",
+		"/C/www/flower/flowers/.htaccess",
+		"/C/www/flower/.htaccess",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/.htaccess",
+		"/C/Users/Administrator/Desktop/test.png",
+		"/C/www/flower/js/jqueryphp/jquery.form.js",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/SaveFlower.php",
+		"/C/www/flower/php/SaveFlowerStats.php",
+		"/C/www/flower/php/MySQLSimple.php",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/error_log",
+		"/C/www/flower/sql.dump",
+		"/C/www/flower/php/Gallery.php",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/jquery.scrollbar-gh-pages/jquery.scrollbar.js",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/jquery.scrollbar-gh-pages/jquery.scrollbar.css",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/jquery.scrollbar-gh-pages/index.html",
+		"/C/www/outcast/php/services/xaoc/Sync.php",
+		"/C/www/flower/js/CanvasThumbnail.js",
+		"/C/www/tiny/index.js",
+		"/C/www/tiny/index.html",
+		"/D/!05_SOFTWARE/Sublime Text Build 3103 x64/Data/Packages/AutoCompleteJS/AutoCompleteJS.sublime-settings",
+		"/C/www/outcast/php/services/xaoc/XLogger.php",
+		"/C/www/dr/develop/js/Game.js",
+		"/C/www/outcast/php/library/Logger.php",
+		"/C/www/outcast/php/library/MySQLSimple.php",
+		"/C/www/flower/js/ElementPolygon.js",
+		"/C/www/flower/js/ElementCircle.js",
+		"/D/!05_SOFTWARE/Sublime Text Build 3103 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/C/www/flower/js/ElementModel.js",
+		"/C/www/flower/js/stopwatch.js",
+		"/D/!05_SOFTWARE/Sublime Text Build 3103 x64/Data/Packages/Default/Preferences.sublime-settings",
+		"/C/www/flower/js/ElementHexagon.js",
+		"/C/www/flower/js/randomColor.js",
+		"/C/www/dr/develop/js/FoodGenerator.js",
+		"/C/www/dr/develop/js/NutrientLevelValues.js",
+		"/C/Users/Administrator/AppData/Local/Temp/_tc/tinyColorPicker-master/colors.js",
+		"/C/www/flower/js/jqColorPicker.js",
+		"/C/www/flower/js/Stats.js",
+		"/C/www/dr/develop/version",
+		"/C/www/dr/develop/js/Globals.js",
+		"/C/www/dr/develop/index.php",
+		"/C/www/dr/develop/js/Ai.js",
+		"/C/www/dr/develop/js/DrawFood.js",
+		"/C/www/dr/develop/css/main.css"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"C:\\www\\flower"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Options",
+			"#^data:image/\\w+;base64,#i",
+			"&",
+			" ",
+			"+",
+			"demo",
+			"css",
+			"    \n",
+			"_logm",
+			"elements",
+			"sliderWavesLabel",
+			"colors.js",
+			"sliderDistanceLabel",
+			"sliderSizeLabel",
+			"CircleElement",
+			"nutrientsMax"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"elements",
+			"elementsDict",
+			"sliderRotationLabel",
+			"sliderWavesLabel",
+			"sliderSidesLabel",
+			"sliderDistanceLabel",
+			"ElementCircle"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "traffic.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"main.",
+				"develop\\css\\main.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 268.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

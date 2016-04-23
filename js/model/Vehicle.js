@@ -1,0 +1,4 @@
+var Vehicle =
+{
+	name: "testVehicle"
+}

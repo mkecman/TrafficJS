@@ -1,0 +1,601 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+#toolbar 
+{ 
+	position: fixed; 
+	left: 0px; 
+	top: 0px; 
+	width: 250px; 
+	padding: 10px; 
+	background-color: #222;
+	color: #FFF;
+	overflow: hidden;
+	text-transform: capitalize;
+	font-size: 14px;
+}
+
+#gallery 
+{ 
+	position: fixed; 
+	right: 0px; 
+	top: 0px; 
+	width: 222px; 
+	padding: 5px; 
+	background-color: #222;
+	color: #FFF;
+	overflow: hidden;
+	font-size: 14px;
+	max-height: 100%;
+}
+
+#gallery-thumbs
+{
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 97vh;
+}
+
+.gallery-thumb
+{
+	padding: 0px;
+	padding-top: 10px;
+	color: white;
+}
+
+.gallery-thumb-image
+{
+	cursor: pointer; 
+	cursor: hand;
+}
+
+.gallery-thumb-title
+{
+	width: 200px;
+}
+
+.gallery-thumb-title-likes
+{
+	float: left;
+	font-size: 10px;
+	font-weight: bold;
+	max-width: 25%;
+	cursor: pointer; 
+	cursor: hand;
+}
+
+.gallery-thumb-title-name
+{
+	text-align: right;
+	font-size: 10px;
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+}
+
+.gallery-thumb-title-name-tekst
+{
+	line-height: 11px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#main-canvas { width: 100%; min-height: 100%; }
+#flower-canvas { width: 100%; min-height: 100%; }
+
+#flower-name,#flower-author
+{
+	width: 95%;
+	text-align: center;
+	margin-top: 5px;
+}
+
+#order-dropdown
+{
+	background-color: black;
+	border-style: none;
+	float: right;
+}
+
+#gallery-header
+{
+	width: 200px;
+}
+
+#save-button 
+{
+	-webkit-border-radius: 7;
+	-moz-border-radius: 7;
+	border-radius: 7px;
+	border-style:none; 
+	color: #ffffff;
+	font-size: 16px;
+	background: #4db878;
+	padding: 10px 10px 10px 10px;
+	margin-top: 20px;
+	text-decoration: none;
+	width: 95%;
+}
+
+#save-button:hover 
+{
+	background: #31cc3b;
+	text-decoration: none;
+}
+
+input 
+{ 
+	padding:3px; 
+	font-size:12px; 
+	border-width:2px; 
+	border-style:solid; 
+	background-color:#878787; 
+	border-color:#000000; 
+	color:#ffffff;  
+} 
+input:focus { outline:none; } 
+
+input[type=checkbox].css-checkbox 
+{
+	position:absolute; 
+	z-index:-1000; 
+	left:-1000px; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height:1px; 
+	width:1px; 
+	margin:-1px; 
+	padding:0; 
+	border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label 
+{
+	padding-left:21px;
+	height:16px; 
+	display:inline-block;
+	line-height:16px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:16px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label 
+{
+	background-position: 0 -16px;
+}
+
+label.css-label 
+{
+background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_17417636dce8c55c6c6073f9724aeeba.png);
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/*************** SCROLLBAR BASE CSS ***************/
+
+            .scroll-wrapper {
+                overflow: hidden !important;
+                padding: 0 !important;
+                position: relative;
+            }
+
+            .scroll-wrapper > .scroll-content {
+                border: none !important;
+                box-sizing: content-box !important;
+                height: auto;
+                left: 0;
+                margin: 0;
+                max-height: none;
+                max-width: none !important;
+                overflow: scroll !important;
+                padding: 0;
+                position: relative !important;
+                top: 0;
+                width: auto !important;
+            }
+
+            .scroll-wrapper > .scroll-content::-webkit-scrollbar {
+                height: 0;
+                width: 0;
+            }
+
+            .scroll-element {
+                display: none;
+            }
+            .scroll-element, .scroll-element div {
+                box-sizing: content-box;
+            }
+
+            .scroll-element.scroll-x.scroll-scrollx_visible,
+            .scroll-element.scroll-y.scroll-scrolly_visible {
+                display: block;
+            }
+
+            .scroll-element .scroll-bar,
+            .scroll-element .scroll-arrow {
+                cursor: default;
+            }
+
+            .scroll-textarea {
+                border: 1px solid #cccccc;
+                border-top-color: #999999;
+            }
+            .scroll-textarea > .scroll-content {
+                overflow: hidden !important;
+            }
+            .scroll-textarea > .scroll-content > textarea {
+                border: none !important;
+                box-sizing: border-box;
+                height: 100% !important;
+                margin: 0;
+                max-height: none !important;
+                max-width: none !important;
+                overflow: scroll !important;
+                outline: none;
+                padding: 2px;
+                position: relative !important;
+                top: 0;
+                width: 100% !important;
+            }
+            .scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+                height: 0;
+                width: 0;
+            }
+
+/*************** SIMPLE INNER SCROLLBAR ***************/
+
+                            .scrollbar-inner > .scroll-element,
+                            .scrollbar-inner > .scroll-element div
+                            {
+                                border: none;
+                                margin: 0;
+                                padding: 0;
+                                position: absolute;
+                                z-index: 10;
+                            }
+
+                            .scrollbar-inner > .scroll-element div {
+                                display: block;
+                                height: 100%;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                            }
+
+                            .scrollbar-inner > .scroll-element.scroll-x {
+                                bottom: 2px;
+                                height: 8px;
+                                left: 0;
+                                width: 100%;
+                            }
+
+                            .scrollbar-inner > .scroll-element.scroll-y {
+                                height: 100%;
+                                right: 2px;
+                                top: 0;
+                                width: 8px;
+                            }
+
+                            .scrollbar-inner > .scroll-element .scroll-element_outer {
+                                overflow: hidden;
+                            }
+
+                            .scrollbar-inner > .scroll-element .scroll-element_outer,
+                            .scrollbar-inner > .scroll-element .scroll-element_track,
+                            .scrollbar-inner > .scroll-element .scroll-bar {
+                                -webkit-border-radius: 8px;
+                                -moz-border-radius: 8px;
+                                border-radius: 8px;
+                            }
+
+                            .scrollbar-inner > .scroll-element .scroll-element_track,
+                            .scrollbar-inner > .scroll-element .scroll-bar {
+                                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+                                filter: alpha(opacity=40);
+                                opacity: 0.4;
+                            }
+
+                            .scrollbar-inner > .scroll-element .scroll-element_track { background-color: #e0e0e0; }
+                            .scrollbar-inner > .scroll-element .scroll-bar { background-color: #c2c2c2; }
+                            .scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: #919191; }
+                            .scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: #919191; }
+
+
+                            /* update scrollbar offset if both scrolls are visible */
+
+                            .scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+                            .scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+
+
+                            .scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+                            .scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
+
+.greenNumber
+{
+	color: #00FF00;
+	font-weight: bold;
+}
+
+.redNumber
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+
+html {
+	color: #222;
+	font-size: 1.3em;
+	line-height: 1.4;
+	height: 100%;
+	overflow: hidden;
+}
+
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.browserupgrade {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+	 Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+	 ========================================================================== */
+
+body {
+	font: 12px/20px Helvetica, Helvetica Neue, Arial;
+	min-height: 100%;
+}
+
+.wrapper {
+	/*margin: 0 2%;*/
+	margin: 0;
+}
+
+/* ===================
+	ALL: Orange Theme
+	 =================== */
+
+.header-container {
+	border-bottom: 20px solid #268de4;
+}
+
+.footer-container,
+.main aside {
+	border-top: 0px solid #268de4;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+	background: #d1e1e6;
+}
+
+.title {
+	color: black;
+}
+
+/* ==============
+	MOBILE: Menu
+	 ============== */
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav a {
+	display: block;
+	margin-bottom: 10px;
+	padding: 15px 0;
+
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+
+	color: black;
+	background: #99d1e1;
+}
+
+nav a:hover,
+nav a:visited {
+	color: black;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+/* ==============
+	MOBILE: Main
+	 ============== */
+
+.main {
+	padding: 0px;
+}
+
+.main article h1 {
+	font-size: 2em;
+}
+
+.main aside {
+	color: black;
+	padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+	color: black;
+	padding: 20px 0;
+}
+
+/* ===============
+	ALL: IE Fixes
+	 =============== */
+
+.ie7 .title {
+	padding-top: 20px;
+}
+
+/* ==========================================================================
+	 Author's custom styles
+	 ========================================================================== */
+
+
+
+/* ==========================================================================
+	 Helper classes
+	 ========================================================================== */
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+/* ==========================================================================
+	 Print styles
+	 ========================================================================== */
+
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
