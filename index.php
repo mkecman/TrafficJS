@@ -32,6 +32,7 @@
 
 	<div id="main-canvas">
 		<canvas id="map-canvas"></canvas>
+		<canvas id="vehicle-canvas"></canvas>
 	</div>
 
 	<div id="toolbar">
@@ -52,7 +53,7 @@
 			<input type="checkbox" name="map-editor-cell-direction" value="W">W</input>
 			<input type="checkbox" name="map-editor-cell-direction" value="NW">NW</input>
 			<hr/>
-			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="" required oninput="handleNameChange()"></input><br/>
+			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="default" required oninput="handleNameChange()"></input><br/>
 			<button id="save-button">SAVE</button>
 		</form>
 	</div>

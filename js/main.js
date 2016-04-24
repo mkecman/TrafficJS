@@ -10,9 +10,11 @@ window.onload = function()
 		"js/model/MapCell.js",
 		"js/factory/MapCellFactory.js",
 		"js/factory/MapCellViewFactory.js",
+		"js/factory/VehicleFactory.js",
 		"js/view/MapCellView.js",
 		"js/view/MapView.js",
-		"js/controller/MapEditor.js"
+		"js/controller/MapEditor.js",
+		"js/controller/VehicleController.js"
 	];
 
 	getScripts( includes, function(){ initApp(); } );
