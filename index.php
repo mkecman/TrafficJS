@@ -33,16 +33,34 @@
 	<div id="main-canvas">
 		<canvas id="map-canvas"></canvas>
 	</div>
-	<!--
+
 	<div id="toolbar">
-		<label>TOOLBAR</label>
+		<label>TOOLBAR</label><br/>
+		<form id="map-editor-form" onsubmit="handleMapEditorFormSubmit(); return false;">
+			<input type="radio" name="map-editor-cell-type" value="0" checked="checked">Road</input>
+			<input type="radio" name="map-editor-cell-type" value="999">Traffic Light</input>
+			<input type="radio" name="map-editor-cell-type" value="1000">Block</input><br/>
+			<input type="radio" name="map-editor-cell-type" value="2000">Start</input>
+			<input type="radio" name="map-editor-cell-type" value="3000">End</input>
+			<hr/>
+			<input type="checkbox" name="map-editor-cell-direction" value="N" checked="checked">N</input>
+			<input type="checkbox" name="map-editor-cell-direction" value="NE">NE</input>
+			<input type="checkbox" name="map-editor-cell-direction" value="E">E</input>
+			<input type="checkbox" name="map-editor-cell-direction" value="SE">SE</input>
+			<input type="checkbox" name="map-editor-cell-direction" value="S">S</input>
+			<input type="checkbox" name="map-editor-cell-direction" value="SW">SW</input>
+			<input type="checkbox" name="map-editor-cell-direction" value="W">W</input>
+			<input type="checkbox" name="map-editor-cell-direction" value="NW">NW</input>
+			<hr/>
+			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="" required oninput="handleNameChange()"></input><br/>
+			<button id="save-button">SAVE</button>
+		</form>
 	</div>
 	<div id="gallery">
 		<div id="gallery-header">
 			<label>GALLERY</label>
 		</div>
 	</div>
-	-->
 <?php
 $version = file_get_contents( "version" );
 

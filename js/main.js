@@ -2,6 +2,7 @@ window.onload = function()
 {
 	var includes = 
 	[
+		"js/model/MapConfig.js",
 		"js/model/enum/MapCellType.js",
 		"js/model/enum/MapCellColor.js",
 		"js/model/Vehicle.js",
@@ -10,7 +11,8 @@ window.onload = function()
 		"js/factory/MapCellFactory.js",
 		"js/factory/MapCellViewFactory.js",
 		"js/view/MapCellView.js",
-		"js/view/MapView.js"
+		"js/view/MapView.js",
+		"js/controller/MapEditor.js"
 	];
 
 	getScripts( includes, function(){ initApp(); } );
@@ -18,13 +20,60 @@ window.onload = function()
 
 function initApp()
 {
-	var size = 50;
-	Map.setup( size, size );
+	setupEventListeners();
+	
+	MapEditor.init( Map, MapView );
 	MapView.init( $('#map-canvas').get( 0 ) );
-	MapView.draw( Map.model, size, size );
+	
+	$.getJSON('maps/default.json', function(json, textStatus) 
+	{
+		MapEditor.loadMap( json );
+	});
+}
+
+function setupEventListeners()
+{
+	$('#map-canvas').mousedown( function( e ){ MapEditor.handleMapMouseDown( e ) } );
+	$('#map-canvas').mousemove( function( e ){ MapEditor.handleMapMouseMove( e ) } );
+	$('#map-canvas').mouseup( function( e ){ MapEditor.handleMapMouseUp( e ) } );
+}
+
+function handleMapEditorFormSubmit() 
+{
+	if( $('#save-button').html() == "SAVE")
+	{
+		$('#save-button').html("SAVING");
+		Map.name = $( '#map-name' ).val();
+
+		var values = [];
+		values.push( { name: "name", value: Map.name } );
+		values.push( { name: "json", value: JSON.stringify( Map ) } );
+		$.php('php/SaveMap.php', values );
+	}
+}
+
+function handleNameChange() 
+{
+	if( $('#save-button').html() != "SAVE")
+		$('#save-button').html("SAVE");
 }
 
 function handleResize() 
 {
 	
 }
+
+php.messages.MapSaved = function (msg, params)
+{
+	//$('#map-name').val("");
+	$('#save-button').html("SAVE");
+}
+
+php.complete = function(XMLHttpRequest, textStatus) 
+{
+	
+};
+php.error = function(xmlEr, typeEr, except) 
+{
+	console.log(xmlEr);
+};

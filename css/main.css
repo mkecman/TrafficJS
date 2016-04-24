@@ -11,7 +11,7 @@
 	color: #FFF;
 	overflow: hidden;
 	text-transform: capitalize;
-	font-size: 14px;
+	font-size: 11px;
 }
 
 #gallery 
@@ -80,10 +80,10 @@
 	transform: translateY(-50%);
 }
 
-#main-canvas { width: 100%; min-height: 100%; }
-#flower-canvas { width: 100%; min-height: 100%; }
+#main-canvas { width: 100%; min-height: 100%; text-align: center }
+/* #map-canvas { width: 100%; min-height: 100%; } */
 
-#flower-name,#flower-author
+#map-name,#flower-author
 {
 	width: 95%;
 	text-align: center;
