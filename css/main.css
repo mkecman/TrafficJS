@@ -123,6 +123,23 @@
 	text-decoration: none;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #ddd;
+    width: 60px;
+    float: left;
+}
+
+ul li {
+    padding: 0px 0px 0px 2px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li:last-child {
+    border-bottom: none
+}
+
 input 
 { 
 	padding:3px; 

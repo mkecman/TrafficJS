@@ -44,15 +44,26 @@
 			<input type="radio" name="map-editor-cell-type" value="2000">Start</input>
 			<input type="radio" name="map-editor-cell-type" value="3000">End</input>
 			<hr/>
-			<input type="checkbox" name="map-editor-cell-direction" value="N" checked="checked">N</input>
-			<input type="checkbox" name="map-editor-cell-direction" value="NE">NE</input>
-			<input type="checkbox" name="map-editor-cell-direction" value="E">E</input>
-			<input type="checkbox" name="map-editor-cell-direction" value="SE">SE</input>
-			<input type="checkbox" name="map-editor-cell-direction" value="S">S</input>
-			<input type="checkbox" name="map-editor-cell-direction" value="SW">SW</input>
-			<input type="checkbox" name="map-editor-cell-direction" value="W">W</input>
-			<input type="checkbox" name="map-editor-cell-direction" value="NW">NW</input>
-			<hr/>
+			<ul>
+				<li><img src="img/directions/NW.png" /><input type="checkbox" name="map-editor-cell-direction" value="NW">NW</input></li>
+				<li><img src="img/directions/NS.png" /><input type="checkbox" name="map-editor-cell-direction" value="NS">NS</input></li>
+				<li><img src="img/directions/NE.png" /><input type="checkbox" name="map-editor-cell-direction" value="NE">NE</input></li>
+			</ul>
+			<ul>
+				<li><img src="img/directions/EN.png" /><input type="checkbox" name="map-editor-cell-direction" value="EN">EN</input></li>
+				<li><img src="img/directions/EW.png" /><input type="checkbox" name="map-editor-cell-direction" value="EW">EW</input></li>
+				<li><img src="img/directions/ES.png" /><input type="checkbox" name="map-editor-cell-direction" value="ES">ES</input></li>
+			</ul>
+			<ul>
+				<li><img src="img/directions/WN.png" /><input type="checkbox" name="map-editor-cell-direction" value="WN">WN</input></li>
+				<li><img src="img/directions/WE.png" /><input type="checkbox" name="map-editor-cell-direction" value="WE">WE</input></li>
+				<li><img src="img/directions/WS.png" /><input type="checkbox" name="map-editor-cell-direction" value="WS">WS</input></li>
+			</ul>
+			<ul>
+				<li><img src="img/directions/SW.png" /><input type="checkbox" name="map-editor-cell-direction" value="SW">SW</input></li>
+				<li><img src="img/directions/SN.png" /><input type="checkbox" name="map-editor-cell-direction" value="SN" checked="checked">SN</input></li>
+				<li><img src="img/directions/SE.png" /><input type="checkbox" name="map-editor-cell-direction" value="SE">SE</input></li>
+			</ul>
 			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="default" required oninput="handleNameChange()"></input><br/>
 			<button id="save-button">SAVE</button>
 		</form>
