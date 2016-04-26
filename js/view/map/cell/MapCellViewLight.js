@@ -1,0 +1,7 @@
+var MapCellViewLight = 
+{
+	update( cellModel )
+	{
+		
+	}
+}

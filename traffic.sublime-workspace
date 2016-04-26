@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"geteel",
+				"getElementById('aSome')"
+			],
+			[
 				"upda",
 				"updateView"
 			],
@@ -311,7 +315,15 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 3847,
+				"buffer_size": 4880,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/main.css",
+			"settings":
+			{
+				"buffer_size": 12513,
 				"line_ending": "Windows"
 			}
 		},
@@ -336,7 +348,47 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 1733,
+				"buffer_size": 2119,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/view/map/cell/MapCellViewEnd.js",
+			"settings":
+			{
+				"buffer_size": 55,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/view/map/cell/MapCellViewBlock.js",
+			"settings":
+			{
+				"buffer_size": 69,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/factory/MapCellViewFactory.js",
+			"settings":
+			{
+				"buffer_size": 564,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/view/MapCellView.js",
+			"settings":
+			{
+				"buffer_size": 719,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/view/MapView.js",
+			"settings":
+			{
+				"buffer_size": 1018,
 				"line_ending": "Windows"
 			}
 		},
@@ -344,7 +396,7 @@
 			"file": "js/controller/MapEditor.js",
 			"settings":
 			{
-				"buffer_size": 1642,
+				"buffer_size": 1667,
 				"line_ending": "Windows",
 				"name": "MapEditor.js"
 			}
@@ -353,33 +405,8 @@
 			"file": "js/model/enum/MapCellType.js",
 			"settings":
 			{
-				"buffer_size": 84,
+				"buffer_size": 110,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/model/MapCell.js",
-			"settings":
-			{
-				"buffer_size": 100,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/model/enum/MapCellColor.js",
-			"settings":
-			{
-				"buffer_size": 108,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/view/MapView.js",
-			"settings":
-			{
-				"buffer_size": 1022,
-				"line_ending": "Windows",
-				"name": "let MapView ="
 			}
 		}
 	],
@@ -437,31 +464,37 @@
 		"/C/www/traffic/js",
 		"/C/www/traffic/js/controller",
 		"/C/www/traffic/js/factory",
-		"/C/www/traffic/js/model",
-		"/C/www/traffic/js/model/enum",
+		"/C/www/traffic/js/model/map",
+		"/C/www/traffic/js/model/map/cell",
 		"/C/www/traffic/js/view",
+		"/C/www/traffic/js/view/map",
+		"/C/www/traffic/js/view/map/cell",
 		"/C/www/traffic/maps",
 		"/C/www/traffic/php"
 	],
 	"file_history":
 	[
+		"/C/www/traffic/js/factory/MapCellFactory.js",
+		"/C/www/traffic/js/model/MapCellDefinitions.js",
+		"/C/www/traffic/js/model/map/cell/MapCell.js",
+		"/C/www/traffic/maps/default.json",
+		"/C/www/traffic/js/model/map/cell/MapCellStart.js",
+		"/C/www/traffic/js/model/enum/MapCellColor.js",
+		"/C/www/traffic/js/view/MapView.js",
 		"/C/www/traffic/js/controller/VehicleController.js",
 		"/C/www/traffic/js/model/Vehicle.js",
 		"/C/www/traffic/js/factory/VehicleViewFactory.js",
 		"/C/www/traffic/js/view/VehiclesView.js",
 		"/C/www/traffic/js/model/Map.js",
 		"/C/www/traffic/js/view/VehicleView.js",
-		"/C/www/traffic/js/factory/MapCellFactory.js",
 		"/C/www/traffic/js/factory/VehicleFactory.js",
 		"/C/www/traffic/css/main.css",
-		"/C/www/traffic/maps/default.json",
 		"/C/www/traffic/js/factory/MapCellViewFactory.js",
 		"/C/www/traffic/maps/qqq.json",
 		"/C/www/traffic/php/SaveMap.php",
 		"/C/www/traffic/js/model/MapCell.js",
 		"/C/www/traffic/maps/www.json",
 		"/C/www/traffic/js/view/MapCellView.js",
-		"/C/www/traffic/js/model/enum/MapCellColor.js",
 		"/C/www/traffic/js/model/enum/MapCellType.js",
 		"/C/www/flower/js/main.js",
 		"/C/www/traffic/maps/.json",
@@ -525,13 +558,14 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"C:\\www\\traffic",
 			"C:\\www\\flower"
 		]
 	},
@@ -540,6 +574,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"MapCellDefinitions",
+			"MapCell",
+			"MapCellColor",
+			"MapCellColor ",
+			"ul",
+			"span",
 			"\"type\": \"0\",",
 			"el",
 			"Options",
@@ -565,6 +605,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\"",
+			"ul",
 			"\"type\": \"1000\",",
 			"e",
 			"elements",
@@ -584,7 +626,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -593,15 +635,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3847,
+						"buffer_size": 4880,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1598,
-								1598
+								3739,
+								3739
 							]
 						],
 						"settings":
@@ -610,14 +652,42 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 361.0,
+						"translation.y": 482.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1843,
+								1843
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2018.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "js/model/MapConfig.js",
 					"semi_transient": false,
 					"settings":
@@ -642,11 +712,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "js/Globals.js",
 					"semi_transient": false,
 					"settings":
@@ -672,24 +742,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1733,
+						"buffer_size": 2119,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								309,
-								309
+								731,
+								731
 							]
 						],
 						"settings":
@@ -701,29 +771,28 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "js/controller/MapEditor.js",
+					"buffer": 5,
+					"file": "js/view/map/cell/MapCellViewEnd.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1642,
+						"buffer_size": 55,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1170,
-								1170
+								50,
+								50
 							]
 						],
 						"settings":
 						{
-							"auto_name": "MapEditor.js",
 							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -735,20 +804,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "js/model/enum/MapCellType.js",
+					"buffer": 6,
+					"file": "js/view/map/cell/MapCellViewBlock.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 84,
+						"buffer_size": 69,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								82,
-								82
+								52,
+								52
 							]
 						],
 						"settings":
@@ -759,57 +828,30 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/model/MapCell.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 100,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "js/model/enum/MapCellColor.js",
+					"file": "js/factory/MapCellViewFactory.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 108,
+						"buffer_size": 564,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								106,
-								106
+								269,
+								269
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -820,24 +862,23 @@
 				},
 				{
 					"buffer": 8,
-					"file": "js/view/MapView.js",
+					"file": "js/view/MapCellView.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1022,
+						"buffer_size": 719,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								1022
+								428,
+								428
 							]
 						],
 						"settings":
 						{
-							"auto_name": "let MapView =",
 							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -845,7 +886,94 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "js/view/MapView.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1018,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								851,
+								851
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "js/controller/MapEditor.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1667,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"auto_name": "MapEditor.js",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "js/model/enum/MapCellType.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								108,
+								108
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -932,7 +1060,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 205.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

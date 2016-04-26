@@ -12,6 +12,7 @@ var MapEditor =
 	{
 		this.model.name = json.name;
 		this.model.model = json.model;
+		//this.setup( 30,30 );
 		this.updateView();
 	},
 	handleMapMouseDown( e )

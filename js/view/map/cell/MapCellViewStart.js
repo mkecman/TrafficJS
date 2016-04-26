@@ -1,0 +1,7 @@
+var MapCellViewStart = 
+{
+	update( cellModel )
+	{
+		
+	}
+}

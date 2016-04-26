@@ -1,5 +1,4 @@
 var MapCellFactory = function init( options )
 {
-	options.color = MapCellColor[ options.type ];
-	return $.extend( {}, MapCell, options );
+	return $.extend( true, {}, MapCell, options, window[ "MapCell" + options.type ] );
 }
