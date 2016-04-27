@@ -31,8 +31,10 @@
 		<![endif]-->
 
 	<div id="main-canvas">
-		<canvas id="map-canvas"></canvas>
-		<canvas id="vehicle-canvas"></canvas>
+		<div class="centerer">
+			<canvas id="map-canvas"></canvas>
+			<canvas id="vehicle-canvas"></canvas>
+		</div>
 	</div>
 
 	<div id="toolbar">

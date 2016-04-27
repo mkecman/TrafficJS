@@ -80,7 +80,27 @@
 	transform: translateY(-50%);
 }
 
-#main-canvas { width: 100%; min-height: 100%; text-align: center }
+#main-canvas 
+{ 
+	width: 100%; 
+	min-height: 100%; 
+	text-align: center; 
+}
+
+.centerer
+{
+	margin: auto;
+	position: relative;
+	width: 630px;
+	height: 630px;
+}
+
+.centerer canvas
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+}
 /* #map-canvas { width: 100%; min-height: 100%; } */
 
 #map-name,#flower-author

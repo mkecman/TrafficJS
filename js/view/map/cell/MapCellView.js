@@ -14,10 +14,10 @@ var MapCellView =
 	},
 	draw()
 	{
-		this.ctx.clearRect( 0, 0, this.canvas.width, this.canvas.height );
+		this.clear();
 		this.ctx.beginPath();
-		this.ctx.strokeStyle = this.model.color;
-		this.ctx.fillStyle = this.model.color;
+		this.ctx.strokeStyle = this.model.model.color;
+		this.ctx.fillStyle = this.model.model.color;
 		
 		if( this.model.fill )
 			this.ctx.fillRect( 0, 0, this.model.size, this.model.size );
@@ -27,5 +27,9 @@ var MapCellView =
 	update( cellModel )
 	{
 		alert('Implement in sub-class!');
+	},
+	clear()
+	{
+		this.ctx.clearRect( 0, 0, this.canvas.width, this.canvas.height );
 	}
 }

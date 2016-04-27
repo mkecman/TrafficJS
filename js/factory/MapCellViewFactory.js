@@ -11,7 +11,7 @@ var MapCellViewFactory =
 		{
 			//var cell = Object.create( window[ "MapCellView" + types[ type ] ] );
 
-			var cell = $.extend( true, {}, window[ "MapCellView" + types[ type ] ], MapCellView );
+			var cell = $.extend( true, {}, MapCellView, window[ "MapCellView" + types[ type ] ] );
 			cell.init( { size: MapConfig.cell.size, fill:MapConfig.cell.fill, model: window[ "MapCell" + types[ type ] ] } );
 			this.model[ types[ type ] ] = cell;
 		}
