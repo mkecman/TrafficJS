@@ -2,6 +2,8 @@ var Vehicle =
 {
 	name: "testVehicle",
 	type: "bicycle",
+	x: 100,
+	y: 100,
 	heading: "N",
 	maxSpeed: 100,
 	acceleration: 1,

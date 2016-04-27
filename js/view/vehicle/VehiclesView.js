@@ -19,16 +19,13 @@ var VehiclesView =
 
 		VehicleViewFactory.setup( VehicleType );
 	},
-	draw( map, width, height )
+	draw( vehicles )
 	{
 		this.ctx.clearRect( 0, 0, this.width, this.height );
-		for( var x = 0; x < width; x++ )
+		for (var i = 0; i < vehicles.length; i++) 
 		{
-			for( var y = 0; y < height; y++ )
-			{
-				var cell = VehicleViewFactory.model[ map.model[ x ][ y ].type ];
-				this.ctx.drawImage( cell.canvas, ( x * cell.model.size ) + ( x * MapConfig.cell.offset ), ( y * cell.model.size ) + ( y * MapConfig.cell.offset ) );
-			}
+			var cell = VehicleViewFactory.update( vehicles[ i ] );
+			this.ctx.drawImage( cell.canvas, cell.model.x, cell.model.y );
 		}
 	}
 }

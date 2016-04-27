@@ -2,8 +2,7 @@ window.onload = function()
 {
 	var includes = 
 	[
-		"js/model/MapConfig.js",
-		"js/model/Vehicle.js",
+		"js/model/MapConfig.js",////////////////////////////MAP
 		"js/model/Map.js",
 		"js/model/enum/MapCellType.js",
 		"js/model/map/cell/MapCell.js",
@@ -14,7 +13,6 @@ window.onload = function()
 		"js/model/map/cell/MapCellStart.js",
 		"js/factory/MapCellFactory.js",
 		"js/factory/MapCellViewFactory.js",
-		"js/factory/VehicleFactory.js",
 		"js/view/map/cell/MapCellView.js",
 		"js/view/map/cell/MapCellViewRoad.js",
 		"js/view/map/cell/MapCellViewBlock.js",
@@ -23,6 +21,19 @@ window.onload = function()
 		"js/view/map/cell/MapCellViewEnd.js",
 		"js/view/map/MapView.js",
 		"js/controller/MapEditor.js",
+		"js/model/enum/VehicleType.js", /////////////////////VEHICLE
+		"js/model/vehicle/Vehicle.js",
+		"js/model/vehicle/Vehicles.js",
+		"js/model/vehicle/VehicleCar.js",
+		"js/model/vehicle/VehicleBicycle.js",
+		"js/model/vehicle/VehicleBus.js",
+		"js/factory/VehicleFactory.js",
+		"js/factory/VehicleViewFactory.js",
+		"js/view/vehicle/VehicleView.js",
+		"js/view/vehicle/VehiclesView.js",
+		"js/view/vehicle/VehicleViewBicycle.js",
+		"js/view/vehicle/VehicleViewCar.js",
+		"js/view/vehicle/VehicleViewBus.js",
 		"js/controller/VehicleController.js"
 	];
 
@@ -33,13 +44,21 @@ function initApp()
 {
 	setupEventListeners();
 	
-	MapEditor.init( Map, MapView );
+	VehiclesView.init( $('#vehicle-canvas').get( 0 ) );
 	MapView.init( $('#map-canvas').get( 0 ) );
+
+	VehicleController.init();
 	
 	$.getJSON('maps/default.json', function(json, textStatus) 
 	{
 		MapEditor.loadMap( json );
+		VehicleController.update();
 	});
+}
+
+function applicationUpdate()
+{
+	VehicleController.update();
 }
 
 function setupEventListeners()

@@ -1,0 +1,6 @@
+var VehicleViewBus = 
+{
+	update( cellModel )
+	{
+	}
+}

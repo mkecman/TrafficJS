@@ -1,13 +1,8 @@
 var MapEditor = 
 {
-	model: null,
-	view: null,
+	model: Map,
+	view: MapView,
 	mouseActive: false,
-	init( model, view )
-	{
-		this.model = model;
-		this.view = view;
-	},
 	loadMap( json )
 	{
 		this.model.name = json.name;

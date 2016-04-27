@@ -1,0 +1,7 @@
+var Vehicles = 
+{
+	model: 
+	[
+
+	]
+}

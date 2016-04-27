@@ -9,9 +9,16 @@ var VehicleViewFactory =
 	{
 		for ( var type in types ) 
 		{
-			var cell = Object.create( VehicleView );
-			cell.init( { size: MapConfig.cell.size, color: MapCellColor[ types[ type ] ], fill:MapConfig.cell.fill } );
+			var cell = $.extend( true, {}, VehicleView, window[ "VehicleView" + types[ type ] ] );
+			cell.init( window[ "Vehicle" + types[ type ] ] );
 			this.model[ types[ type ] ] = cell;
 		}
+	},
+	update( cellModel )
+	{
+		var cellView = this.model[ cellModel.type ];
+		cellView.update( cellModel );
+
+		return cellView;
 	}
 }
