@@ -101,7 +101,11 @@
     top: 0;
     left: 0;
 }
-/* #map-canvas { width: 100%; min-height: 100%; } */
+
+#vehicle-canvas
+{ 
+	pointer-events:none;
+} 
 
 #map-name,#flower-author
 {

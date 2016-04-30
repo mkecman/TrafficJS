@@ -2,8 +2,7 @@ window.onload = function()
 {
 	var includes = 
 	[
-		"js/model/MapConfig.js",////////////////////////////MAP
-		"js/model/Map.js",
+		"js/model/Map.js",////////////////////////////MAP
 		"js/model/enum/MapCellType.js",
 		"js/model/map/cell/MapCell.js",
 		"js/model/map/cell/MapCellBlock.js",
@@ -21,6 +20,8 @@ window.onload = function()
 		"js/view/map/cell/MapCellViewEnd.js",
 		"js/view/map/MapView.js",
 		"js/controller/MapEditor.js",
+		"js/controller/HomeFinder.js",
+		"js/pathfinding/pathfinding-browser.min.js",
 		"js/model/enum/VehicleType.js", /////////////////////VEHICLE
 		"js/model/vehicle/Vehicle.js",
 		"js/model/vehicle/Vehicles.js",
@@ -43,17 +44,26 @@ window.onload = function()
 function initApp()
 {
 	setupEventListeners();
-	
+
 	VehiclesView.init( $('#vehicle-canvas').get( 0 ) );
 	MapView.init( $('#map-canvas').get( 0 ) );
 
 	VehicleController.init();
 	
 	$.getJSON('maps/default.json', function(json, textStatus) 
+	//$.getJSON('maps/empty.json', function(json, textStatus) 
 	{
-		MapEditor.loadMap( json );
-		VehicleController.update();
+		mapLoaded( json );
 	});
+}
+
+function mapLoaded( json )
+{
+	$.extend( true, Map, json );
+
+	MapEditor.loadMap();
+	VehicleController.loadMap();
+	VehicleController.update();
 }
 
 function applicationUpdate()
@@ -66,6 +76,7 @@ function setupEventListeners()
 	$('#map-canvas').mousedown( function( e ){ MapEditor.handleMapMouseDown( e ) } );
 	$('#map-canvas').mousemove( function( e ){ MapEditor.handleMapMouseMove( e ) } );
 	$('#map-canvas').mouseup( function( e ){ MapEditor.handleMapMouseUp( e ) } );
+	$('#clear-button').click( function( e ){ MapEditor.handleClearButtonClick( e ) } );
 }
 
 function handleMapEditorFormSubmit() 

@@ -1,13 +1,13 @@
 var MapEditor = 
 {
-	model: Map,
+	map: Map,
 	view: MapView,
 	mouseActive: false,
-	loadMap( json )
+	loadMap()
 	{
-		this.model.name = json.name;
-		this.model.model = json.model;
-		//this.setup( 30,30 );
+		if( DEBUG ) 
+			this.generateEmptyMap();
+		
 		this.updateView();
 	},
 	handleMapMouseDown( e )
@@ -18,9 +18,9 @@ var MapEditor =
 	handleMapMouseMove( e )
 	{
 		var point = this.getMouseCell( e );
-		if( this.mouseActive && point.x < MapConfig.map.sizeX && point.y < MapConfig.map.sizeY )
+		if( this.mouseActive && point.x < this.map.sizeX && point.y < this.map.sizeY )
 		{
-			var cell = this.model.model[ point.x ][ point.y ];
+			var cell = this.map.cells[ point.x ][ point.y ];
 			cell.type = $("input[name=map-editor-cell-type]:checked").val();
 			cell.directions = [];
 			$("input[name=map-editor-cell-direction]:checked").each( function(){ cell.directions.push( $(this).val() ) } );
@@ -35,25 +35,32 @@ var MapEditor =
 	{
 		this.mouseActive = false;
 	},
+	handleClearButtonClick( e )
+	{
+		this.generateEmptyMap();
+	},
 	getMouseCell( event )
 	{
-		var xPosition = Math.floor( event.offsetX / ( MapConfig.cell.size + MapConfig.cell.offset ) );
-		var yPosition = Math.floor( event.offsetY / ( MapConfig.cell.size + MapConfig.cell.offset ) );
+		var xPosition = Math.floor( event.offsetX / ( this.map.cell.size + this.map.cell.offset ) );
+		var yPosition = Math.floor( event.offsetY / ( this.map.cell.size + this.map.cell.offset ) );
 		return { x: xPosition, y: yPosition };
 	},
 	updateView()
 	{
-		this.view.draw( this.model, MapConfig.map.sizeX, MapConfig.map.sizeY );
+		this.view.draw( this.map );
 	},
-	setup( width, height )
+	generateEmptyMap()
 	{
 		var total = 0;
+		var width = this.map.sizeX;
+		var height = this.map.sizeY;
+		this.map.cells = {};
 		for( var indexWidth = 0; indexWidth < width; indexWidth++ ) 
 		{
-			this.model.model[ indexWidth ] = {};
+			this.map.cells[ indexWidth ] = {};
 			for( var indexHeight = 0; indexHeight < height; indexHeight++ )
 			{
-				this.model.model[ indexWidth ][ indexHeight ] = MapCellFactory( { id: total, x: indexWidth, y: indexHeight, type: MapCellType.BLOCK } );
+				this.map.cells[ indexWidth ][ indexHeight ] = MapCellFactory( { id: total, x: indexWidth, y: indexHeight, type: MapCellType.BLOCK } );
 				total++;
 			}
 		}

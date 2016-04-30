@@ -10,8 +10,8 @@ var VehiclesView =
 
 		//this.width = window.innerWidth;
 		//this.height = window.innerHeight;
-		this.width = MapConfig.map.sizeX * MapConfig.cell.size + MapConfig.map.sizeX * MapConfig.cell.offset;
-		this.height = MapConfig.map.sizeY * MapConfig.cell.size + MapConfig.map.sizeY * MapConfig.cell.offset;
+		this.width = Map.sizeX * Map.cell.size + Map.sizeX * Map.cell.offset;
+		this.height = Map.sizeY * Map.cell.size + Map.sizeY * Map.cell.offset;
 		this.ctx.width  = this.width;
 		this.ctx.height = this.height;
 		this.ctx.canvas.width  = this.width;

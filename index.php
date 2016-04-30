@@ -68,6 +68,8 @@
 			</ul>
 			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="default" required oninput="handleNameChange()"></input><br/>
 			<button id="save-button">SAVE</button>
+			<hr/>
+			<button id="clear-button">CLEAR MAP</button>
 		</form>
 	</div>
 	<div id="gallery">
