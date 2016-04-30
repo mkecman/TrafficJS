@@ -5,5 +5,6 @@ var MapCell =
 	y: 0,
 	type: MapCellType.BLOCK,
 	color: "#FF0000",
-	directions:[]
+	directions:[],
+	occupied: false
 }

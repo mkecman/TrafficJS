@@ -152,22 +152,22 @@ Grid.prototype.getNeighbors = function(node, diagonalMovement) {
         nodes = this.nodes;
 
     // ↑
-    if (this.isWalkableAt(x, y - 1)) {
+    if (this.isWalkableAt(x, y - 1, "N" )) {
         neighbors.push(nodes[y - 1][x]);
         s0 = true;
     }
     // →
-    if (this.isWalkableAt(x + 1, y)) {
+    if (this.isWalkableAt(x + 1, y, "E" )) {
         neighbors.push(nodes[y][x + 1]);
         s1 = true;
     }
     // ↓
-    if (this.isWalkableAt(x, y + 1)) {
+    if (this.isWalkableAt(x, y + 1, "S" )) {
         neighbors.push(nodes[y + 1][x]);
         s2 = true;
     }
     // ←
-    if (this.isWalkableAt(x - 1, y)) {
+    if (this.isWalkableAt(x - 1, y, "W" )) {
         neighbors.push(nodes[y][x - 1]);
         s3 = true;
     }

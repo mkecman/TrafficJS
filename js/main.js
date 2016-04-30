@@ -35,7 +35,8 @@ window.onload = function()
 		"js/view/vehicle/VehicleViewBicycle.js",
 		"js/view/vehicle/VehicleViewCar.js",
 		"js/view/vehicle/VehicleViewBus.js",
-		"js/controller/VehicleController.js"
+		"js/controller/VehicleController.js",
+		"js/controller/LightsController.js"
 	];
 
 	getScripts( includes, function(){ initApp(); } );
@@ -51,7 +52,6 @@ function initApp()
 	VehicleController.init();
 	
 	$.getJSON('maps/default.json', function(json, textStatus) 
-	//$.getJSON('maps/empty.json', function(json, textStatus) 
 	{
 		mapLoaded( json );
 	});
@@ -60,15 +60,26 @@ function initApp()
 function mapLoaded( json )
 {
 	$.extend( true, Map, json );
+	Map.findMapCells();
 
 	MapEditor.loadMap();
 	VehicleController.loadMap();
 	VehicleController.update();
 }
 
+var animationTick = 0;
 function applicationUpdate()
 {
-	VehicleController.update();
+	animationTick++;
+	if( animationTick >= 10 )
+	{
+		animationTick = 0;
+		LightsController.update();
+		VehicleController.update();
+		MapView.draw( Map );
+	}
+
+	requestAnimationFrame( applicationUpdate );
 }
 
 function setupEventListeners()

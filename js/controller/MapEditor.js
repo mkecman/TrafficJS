@@ -7,7 +7,7 @@ var MapEditor =
 	{
 		if( DEBUG ) 
 			this.generateEmptyMap();
-		
+
 		this.updateView();
 	},
 	handleMapMouseDown( e )
@@ -22,6 +22,8 @@ var MapEditor =
 		{
 			var cell = this.map.cells[ point.x ][ point.y ];
 			cell.type = $("input[name=map-editor-cell-type]:checked").val();
+			$.extend( true, cell, window[ "MapCell" + cell.type ] );
+			
 			cell.directions = [];
 			$("input[name=map-editor-cell-direction]:checked").each( function(){ cell.directions.push( $(this).val() ) } );
 			this.updateView();

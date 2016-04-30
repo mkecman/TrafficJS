@@ -2,10 +2,7 @@ var VehicleController =
 {
 	view: VehiclesView,
 	map: Map,
-	startMapCells: [],
-	endMapCells: [],
 	finder: null,
-	animTick: 0,
 	init()
 	{
 		this.finder = HomeFinder;
@@ -19,11 +16,10 @@ var VehicleController =
 	{
 		this.finder.loadMap( this.map );
 		//finds start & end mapcells
-		this.findStartEndMapCells();
-		if( this.startMapCells.length > 0 && this.endMapCells.length > 0 )
+		if( this.map.startMapCells.length > 0 && this.map.endMapCells.length > 0 )
 		{
-			var startCell = this.startMapCells[ getRandomInt( 0, this.startMapCells.length - 1 ) ];
-			var endCell = this.endMapCells[ getRandomInt( 0, this.endMapCells.length - 1 ) ];
+			var startCell = this.map.startMapCells[ getRandomInt( 0, this.map.startMapCells.length - 1 ) ];
+			var endCell = this.map.endMapCells[ getRandomInt( 0, this.map.endMapCells.length - 1 ) ];
 			
 			//reset vehicle position
 			var startPoint = this.map.getPixelPosition( startCell.x, startCell.y );
@@ -33,53 +29,27 @@ var VehicleController =
 			//find path
 			Vehicles.model[ 0 ].path = this.finder.getPath( startCell, endCell );
 			Vehicles.model[ 0 ].currentPathStep = 0;
-			requestAnimationFrame( applicationUpdate );
 			
+			applicationUpdate();
 		}
 		else
 			alert( "Please define at least one start & end position." );
 	},
 	update()
 	{
-		//nextDirection = vehicle.tryGoNext( paths[ currentStep ] );
-		//vehicle.move( nextDirection );
-
-		//Vehicles.model[ 0 ].y -= 2;
-		this.animTick++;
-		if( this.animTick >= 60 )
+		var car = Vehicles.model[0];
+		if( car.currentPathStep < car.path.length)
 		{
-			this.animTick = 0;
-			var car = Vehicles.model[0];
-			if( car.currentPathStep < car.path.length)
+			x = car.path[ car.currentPathStep ][ 0 ];
+			y = car.path[ car.currentPathStep ][ 1 ];
+			if( this.map.canEnterCellRealTime( x, y ) )
 			{
-				var newCarPoint = this.map.getPixelPosition( car.path[ car.currentPathStep ][ 0 ], car.path[ car.currentPathStep ][ 1 ] );
+				var newCarPoint = this.map.getPixelPosition( x, y );
 				car.x = newCarPoint.x;
 				car.y = newCarPoint.y;
 				Vehicles.model[ 0 ].currentPathStep++;
-				VehiclesView.draw( Vehicles.model );
-				_logm("cao");
 			}
-		}
-
-		requestAnimationFrame( applicationUpdate );
-	},
-	findStartEndMapCells()
-	{
-		var cells = this.map.cells;
-		this.startMapCells = [];
-		for (var x = 0; x < this.map.sizeX; x++) 
-		{
-			for (var y = 0; y < this.map.sizeY; y++) 
-			{
-				if( cells[ x ][ y ].type == MapCellType.START )
-				{
-					this.startMapCells.push( { x: x, y: y } );
-				}
-				if( cells[ x ][ y ].type == MapCellType.END )
-				{
-					this.endMapCells.push( { x: x, y: y } );
-				}
-			}
+			VehiclesView.draw( Vehicles.model );
 		}
 	}
 }
