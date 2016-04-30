@@ -5,6 +5,7 @@ var VehicleController =
 	startMapCells: [],
 	endMapCells: [],
 	finder: null,
+	animTick: 0,
 	init()
 	{
 		this.finder = HomeFinder;
@@ -31,7 +32,9 @@ var VehicleController =
 			
 			//find path
 			Vehicles.model[ 0 ].path = this.finder.getPath( startCell, endCell );
-			console.log( Vehicles.model[ 0 ].path );
+			Vehicles.model[ 0 ].currentPathStep = 0;
+			requestAnimationFrame( applicationUpdate );
+			
 		}
 		else
 			alert( "Please define at least one start & end position." );
@@ -42,9 +45,23 @@ var VehicleController =
 		//vehicle.move( nextDirection );
 
 		//Vehicles.model[ 0 ].y -= 2;
-		VehiclesView.draw( Vehicles.model );
+		this.animTick++;
+		if( this.animTick >= 60 )
+		{
+			this.animTick = 0;
+			var car = Vehicles.model[0];
+			if( car.currentPathStep < car.path.length)
+			{
+				var newCarPoint = this.map.getPixelPosition( car.path[ car.currentPathStep ][ 0 ], car.path[ car.currentPathStep ][ 1 ] );
+				car.x = newCarPoint.x;
+				car.y = newCarPoint.y;
+				Vehicles.model[ 0 ].currentPathStep++;
+				VehiclesView.draw( Vehicles.model );
+				_logm("cao");
+			}
+		}
 
-		//requestAnimationFrame( applicationUpdate );
+		requestAnimationFrame( applicationUpdate );
 	},
 	findStartEndMapCells()
 	{
