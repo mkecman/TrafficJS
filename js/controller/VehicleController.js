@@ -15,7 +15,7 @@ var VehicleController =
 		{
 			//make cars
 			//for (var i = 0; i < this.map.startMapCells.length; i++) 
-			for (var i = 0; i < 50; i++) 
+			for (var i = 0; i < 1; i++) 
 			{
 				var car = VehicleFactory( { type: VehicleType.CAR } );
 				Vehicles.model.push( car );

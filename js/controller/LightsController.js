@@ -1,14 +1,28 @@
 var LightsController = 
 {
 	map: Map,
+	init()
+	{
+		for (var i = 0; i < this.map.lightsMapCells.length; i++) 
+		{
+			var lightPoint = this.map.lightsMapCells[i];
+			var light = this.map.cells[ lightPoint.x ][ lightPoint.y ];
+			
+		}
+	},
 	update()
 	{
 		for (var i = 0; i < this.map.lightsMapCells.length; i++) 
 		{
 			var lightPoint = this.map.lightsMapCells[i];
 			var light = this.map.cells[ lightPoint.x ][ lightPoint.y ];
-			this.updateLight( light, lightPoint );
+			if( light.delayTick > 0 )
+			{
+				light.delayTick--;
+				continue;
+			}
 
+			this.updateLight( light, lightPoint );
 			if( light.greenTick >= light.greenDuration )
 			{
 				light.stopLight = true;

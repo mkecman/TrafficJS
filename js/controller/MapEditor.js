@@ -3,18 +3,34 @@ var MapEditor =
 	map: Map,
 	view: MapView,
 	mouseActive: false,
+	currentCell: null,
 	loadMap()
 	{
-		if( DEBUG ) 
-			this.generateEmptyMap();
-
 		this.updateView();
 	},
 	handleMapMouseDown( e )
 	{
-		infoTooltip.show();
-		this.mouseActive = true;
-		this.handleMapMouseMove( e );
+		if( $('#map-editor-enabled').prop( 'checked' ) )
+		{
+			infoTooltip.show();
+			this.mouseActive = true;
+			this.handleMapMouseMove( e );
+		}
+		else
+		{
+			var point = this.getMouseCell( e );
+			if( point.x < this.map.sizeX && point.y < this.map.sizeY )
+			{
+				var cell = this.map.cells[ point.x ][ point.y ];
+				if( cell.type == MapCellType.LIGHT )
+				{
+					this.currentCell = cell;
+					$('#green-duration').val( this.currentCell.greenDuration );
+					$('#red-duration').val( this.currentCell.redDuration );
+					$('#delay').val( this.currentCell.delay );
+				}
+			}
+		}
 	},
 	handleMapMouseMove( e )
 	{
@@ -22,11 +38,10 @@ var MapEditor =
 		if( point.x < this.map.sizeX && point.y < this.map.sizeY )
 		{
 			var cell = this.map.cells[ point.x ][ point.y ];
-			infoTooltip.setContent( '<pre>' + JSON.stringify( cell, null, 4 ) + '</pre>' );
+			infoTooltip.setContent( '<pre>' + JSON.stringify( cell, null, 2 ) + '</pre>' );
 
 			if( this.mouseActive )
 			{
-				
 				cell.type = $("input[name=map-editor-cell-type]:checked").val();
 				$.extend( true, cell, window[ "MapCell" + cell.type ] );
 				
@@ -47,6 +62,12 @@ var MapEditor =
 	handleClearButtonClick( e )
 	{
 		this.generateEmptyMap();
+	},
+	handleLightChange()
+	{
+		this.currentCell.greenDuration = parseInt( $('#green-duration').val() );
+		this.currentCell.redDuration = parseInt( $('#red-duration').val() );
+		this.currentCell.delay = parseInt( $('#delay').val() );
 	},
 	getMouseCell( event )
 	{
@@ -106,6 +127,7 @@ var MapEditor =
 				{
 					cell.greenTick = 0;
 					cell.redTick = 0;
+					cell.delayTick = cell.delay;
 				}
 			}
 		}

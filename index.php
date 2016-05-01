@@ -41,6 +41,7 @@
 
 	<div id="toolbar">
 		<label>TOOLBAR</label><br/>
+		<input type="checkbox" id="map-editor-enabled">Map Editor Enabled</input>
 		<form id="map-editor-form" onsubmit="handleMapEditorFormSubmit(); return false;">
 			<input type="radio" name="map-editor-cell-type" value="Road" checked="checked">Road</input>
 			<input type="radio" name="map-editor-cell-type" value="Light">Traffic Light</input>
@@ -68,6 +69,12 @@
 				<li><img id="SN" src="img/directions/SN.png" /><input type="checkbox" name="map-editor-cell-direction" value="SN" checked="checked">SN</input></li>
 				<li><img id="SE" src="img/directions/SE.png" /><input type="checkbox" name="map-editor-cell-direction" value="SE">SE</input></li>
 			</ul>
+			<div id="cell-editor">
+				Duration<br/>
+				Green: <input id="green-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
+				Red: <input id="red-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
+				Delay: <input id="delay" type="numeric" onchange="MapEditor.handleLightChange()"></input>
+			</div>
 			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="default" required oninput="handleNameChange()"></input><br/>
 			<button id="save-button">SAVE</button>
 			<hr/>

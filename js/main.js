@@ -47,7 +47,8 @@ var infoTooltip;
 
 function initApp()
 {
-	infoTooltip = new Opentip($("#map-canvas"));
+	Opentip.defaultStyle = "dark";
+	infoTooltip = new Opentip($("#map-canvas") );
 	
 	setupEventListeners();
 
@@ -70,6 +71,7 @@ function mapLoaded( json )
 	MapEditor.loadMap();
 	VehicleController.loadMap();
 	VehicleController.update();
+	LightsController.init();
 
 	applicationUpdate();
 }
@@ -78,7 +80,7 @@ var animationTick = 0;
 function applicationUpdate()
 {
 	animationTick++;
-	if( animationTick >= 5 )
+	if( animationTick >= 30 )
 	{
 		
 		animationTick = 0;
