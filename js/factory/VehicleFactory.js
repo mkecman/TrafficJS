@@ -1,4 +1,6 @@
 var VehicleFactory = function init( options )
 {
-	return $.extend( true, {}, Vehicle, options, window[ "Vehicle" + options.type ] );
+	var rColor = randomColor( {hue: 'random',luminosity: 'dark',count: 1} )
+	options.color = rColor[ 0 ];
+	return $.extend( true, {}, Vehicle, window[ "Vehicle" + options.type ], options );
 }

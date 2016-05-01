@@ -1,4 +1,4 @@
 var MapCellFactory = function init( options )
 {
-	return $.extend( true, {}, MapCell, options, window[ "MapCell" + options.type ] );
+	return $.extend( true, {}, MapCell, window[ "MapCell" + options.type ], options );
 }

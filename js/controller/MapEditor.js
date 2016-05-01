@@ -12,25 +12,32 @@ var MapEditor =
 	},
 	handleMapMouseDown( e )
 	{
+		infoTooltip.show();
 		this.mouseActive = true;
 		this.handleMapMouseMove( e );
 	},
 	handleMapMouseMove( e )
 	{
 		var point = this.getMouseCell( e );
-		if( this.mouseActive && point.x < this.map.sizeX && point.y < this.map.sizeY )
+		if( point.x < this.map.sizeX && point.y < this.map.sizeY )
 		{
 			var cell = this.map.cells[ point.x ][ point.y ];
-			cell.type = $("input[name=map-editor-cell-type]:checked").val();
-			$.extend( true, cell, window[ "MapCell" + cell.type ] );
-			
-			cell.directions = [];
-			$("input[name=map-editor-cell-direction]:checked").each( function(){ cell.directions.push( $(this).val() ) } );
-			this.updateView();
-		}
-		else
-		{
-			this.mouseActive = false;
+			infoTooltip.setContent( '<pre>' + JSON.stringify( cell, null, 4 ) + '</pre>' );
+
+			if( this.mouseActive )
+			{
+				
+				cell.type = $("input[name=map-editor-cell-type]:checked").val();
+				$.extend( true, cell, window[ "MapCell" + cell.type ] );
+				
+				cell.directions = [];
+				$("input[name=map-editor-cell-direction]:checked").each( function(){ cell.directions.push( $(this).val() ) } );
+				this.updateView();
+			}
+			else
+			{
+				this.mouseActive = false;
+			}
 		}
 	},
 	handleMapMouseUp( e )
@@ -54,16 +61,52 @@ var MapEditor =
 	generateEmptyMap()
 	{
 		var total = 0;
-		var width = this.map.sizeX;
-		var height = this.map.sizeY;
+		var width = 100;//this.map.sizeX;
+		var height = 100; //this.map.sizeY;
 		this.map.cells = {};
 		for( var indexWidth = 0; indexWidth < width; indexWidth++ ) 
 		{
 			this.map.cells[ indexWidth ] = {};
 			for( var indexHeight = 0; indexHeight < height; indexHeight++ )
 			{
-				this.map.cells[ indexWidth ][ indexHeight ] = MapCellFactory( { id: total, x: indexWidth, y: indexHeight, type: MapCellType.BLOCK } );
+				this.map.cells[ indexWidth ][ indexHeight ] = MapCellFactory( { id: total, x: indexWidth, y: indexHeight, type: MapCellType.ROAD, directions: [ "WE", "EW", "NS", "SN" ] } );
 				total++;
+			}
+		}
+	},
+	getCleanMap()
+	{
+		var tempMap = $.extend( true, {}, this.map );
+		var cell;
+		for (var x = 0; x < tempMap.sizeX; x++) 
+		{
+			for (var y = 0; y < tempMap.sizeY; y++) 
+			{
+				cell = tempMap.cells[ x ][ y ];
+				cell.occupied = false;
+				if( cell.type == MapCellType.LIGHT )
+				{
+					cell.greenTick = 0;
+					cell.redTick = 0;
+				}
+			}
+		}
+		return tempMap;
+	},
+	reset()
+	{
+		var cell;
+		for (var x = 0; x < this.map.sizeX; x++) 
+		{
+			for (var y = 0; y < this.map.sizeY; y++) 
+			{
+				cell = this.map.cells[ x ][ y ];
+				cell.occupied = false;
+				if( cell.type == MapCellType.LIGHT )
+				{
+					cell.greenTick = 0;
+					cell.redTick = 0;
+				}
 			}
 		}
 	}

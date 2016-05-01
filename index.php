@@ -23,6 +23,8 @@
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 		<script src="js/jqueryphp/jquery.php.js" type="text/javascript"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/opentip-jquery.min.js"></script>
+		<link href="css/opentip.css" rel="stylesheet" type="text/css" />
 		
 	</head>
 	<body onresize="handleResize()">
@@ -69,8 +71,9 @@
 			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="default" required oninput="handleNameChange()"></input><br/>
 			<button id="save-button">SAVE</button>
 			<hr/>
-			<button id="clear-button">CLEAR MAP</button>
 		</form>
+		<button id="clear-button">CLEAR MAP</button>
+		<button id="reset-button">RESET MAP</button>
 	</div>
 	<div id="gallery">
 		<div id="gallery-header">

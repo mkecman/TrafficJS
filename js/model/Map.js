@@ -20,7 +20,7 @@ var Map =
 		point.y = ( y * this.cell.size ) + ( y * this.cell.offset );
 		return point;
 	},
-	canEnterCell( x, y, direction )
+	canMoveFromCell( x, y, direction )
 	{
 		var targetCell = this.cells[ x ][ y ];
 		for (var i = 0; i < targetCell.directions.length; i++) 
@@ -33,7 +33,7 @@ var Map =
 	},
 	canEnterCellRealTime( x, y )
 	{
-		if( this.cells[ x ][ y ].occupied )
+		if( this.cells[ x ][ y ].occupied || this.cells[ x ][ y ].stopLight )
 			return false;
 
 		return true;

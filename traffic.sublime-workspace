@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Vehi",
+				"Vehicles"
+			],
+			[
+				"star",
+				"startMapCells"
+			],
+			[
 				"light",
 				"lightPoint"
 			],
@@ -48,16 +56,8 @@
 				"clone()	grid.js"
 			],
 			[
-				"star",
-				"startPoint"
-			],
-			[
 				"start",
 				"startPoint"
-			],
-			[
-				"Vehi",
-				"Vehicles"
 			],
 			[
 				"get",
@@ -371,7 +371,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 4973,
+				"buffer_size": 5137,
 				"line_ending": "Windows"
 			}
 		},
@@ -395,7 +395,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 3236,
+				"buffer_size": 3488,
 				"line_ending": "Windows"
 			}
 		},
@@ -403,7 +403,7 @@
 			"file": "js/controller/MapEditor.js",
 			"settings":
 			{
-				"buffer_size": 1689,
+				"buffer_size": 2547,
 				"line_ending": "Windows"
 			}
 		},
@@ -411,24 +411,24 @@
 			"file": "js/controller/LightsController.js",
 			"settings":
 			{
-				"buffer_size": 683,
+				"buffer_size": 686,
 				"line_ending": "Windows",
 				"name": "LightsController"
-			}
-		},
-		{
-			"file": "js/view/map/cell/MapCellView.js",
-			"settings":
-			{
-				"buffer_size": 747,
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "js/controller/VehicleController.js",
 			"settings":
 			{
-				"buffer_size": 1492,
+				"buffer_size": 2923,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/controller/HomeFinder.js",
+			"settings":
+			{
+				"buffer_size": 4073,
 				"line_ending": "Windows"
 			}
 		},
@@ -436,15 +436,23 @@
 			"file": "js/model/Map.js",
 			"settings":
 			{
-				"buffer_size": 1268,
+				"buffer_size": 1305,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/model/map/cell/MapCellLight.js",
+			"file": "js/view/vehicle/VehicleViewCar.js",
 			"settings":
 			{
-				"buffer_size": 169,
+				"buffer_size": 461,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/view/vehicle/VehicleView.js",
+			"settings":
+			{
+				"buffer_size": 821,
 				"line_ending": "Windows"
 			}
 		}
@@ -504,12 +512,8 @@
 		"/C/www/traffic/js/controller",
 		"/C/www/traffic/js/factory",
 		"/C/www/traffic/js/model",
-		"/C/www/traffic/js/model/enum",
 		"/C/www/traffic/js/model/map",
 		"/C/www/traffic/js/model/map/cell",
-		"/C/www/traffic/js/model/vehicle",
-		"/C/www/traffic/js/pathfinding/core",
-		"/C/www/traffic/js/pathfinding/finders",
 		"/C/www/traffic/js/view",
 		"/C/www/traffic/js/view/map",
 		"/C/www/traffic/js/view/map/cell",
@@ -519,12 +523,23 @@
 	],
 	"file_history":
 	[
-		"/C/www/traffic/js/view/map/cell/MapCellViewLight.js",
+		"/C/www/traffic/js/factory/MapCellFactory.js",
+		"/C/www/traffic/js/view/vehicle/VehicleView.js",
+		"/C/www/traffic/js/model/map/cell/MapCellLight.js",
+		"/C/www/traffic/js/model/map/cell/MapCell.js",
+		"/C/www/traffic/js/view/vehicle/VehiclesView.js",
+		"/C/www/traffic/js/factory/VehicleViewFactory.js",
+		"/C/www/traffic/js/model/Map.js",
+		"/C/www/traffic/js/model/vehicle/Vehicles.js",
+		"/C/www/traffic/js/view/vehicle/VehicleViewCar.js",
 		"/C/www/traffic/maps/default.json",
+		"/C/www/traffic/js/view/map/cell/MapCellView.js",
+		"/C/www/traffic/js/factory/VehicleFactory.js",
+		"/C/www/flower/js/main.js",
+		"/C/www/flower/js/UI.js",
+		"/C/www/traffic/js/view/map/cell/MapCellViewLight.js",
 		"/C/www/traffic/js/view/map/cell/MapCellViewRoad.js",
 		"/C/www/traffic/js/controller/HomeFinder.js",
-		"/C/www/traffic/js/model/Map.js",
-		"/C/www/traffic/js/model/map/cell/MapCell.js",
 		"/C/www/traffic/js/pathfinding/core/Grid.js",
 		"/C/www/traffic/js/pathfinding/finders/AStarFinder.js",
 		"/C/www/traffic/maps/empty.json",
@@ -536,29 +551,21 @@
 		"/C/Users/Administrator/AppData/Local/Temp/_tc/pathfinding-bower-0.4.14/pathfinding-browser.min.js",
 		"/C/www/traffic/js/view/map/MapView.js",
 		"/C/www/traffic/js/controller/MapEditor.js",
-		"/C/www/traffic/js/view/vehicle/VehiclesView.js",
 		"/C/www/traffic/js/factory/MapCellViewFactory.js",
 		"/C/www/traffic/js/model/MapConfig.js",
 		"/C/www/traffic/js/view/vehicle/VehicleViewBus.js",
 		"/C/www/traffic/js/view/vehicle/VehicleViewBicycle.js",
 		"/C/www/traffic/js/model/vehicle/Vehicle.js",
-		"/C/www/traffic/js/factory/VehicleViewFactory.js",
-		"/C/www/traffic/js/view/vehicle/VehicleViewCar.js",
-		"/C/www/traffic/js/view/vehicle/VehicleView.js",
 		"/C/www/traffic/js/model/vehicle/VehicleCar.js",
-		"/C/www/traffic/js/model/vehicle/Vehicles.js",
 		"/C/www/traffic/js/model/vehicle/VehicleBicycle.js",
 		"/C/www/traffic/js/model/vehicle/VehicleBus.js",
-		"/C/www/traffic/js/factory/VehicleFactory.js",
 		"/C/www/traffic/js/model/enum/VehicleType.js",
 		"/C/www/traffic/js/model/enum/MapCellType.js",
 		"/C/www/traffic/js/view/MapView.js",
-		"/C/www/traffic/js/view/map/cell/MapCellView.js",
 		"/C/www/traffic/css/main.css",
 		"/C/www/traffic/js/view/MapCellView.js",
 		"/C/www/traffic/js/view/map/cell/MapCellViewBlock.js",
 		"/C/www/traffic/js/view/map/cell/MapCellViewEnd.js",
-		"/C/www/traffic/js/factory/MapCellFactory.js",
 		"/C/www/traffic/js/model/MapCellDefinitions.js",
 		"/C/www/traffic/js/model/map/cell/MapCellStart.js",
 		"/C/www/traffic/js/model/enum/MapCellColor.js",
@@ -570,7 +577,6 @@
 		"/C/www/traffic/php/SaveMap.php",
 		"/C/www/traffic/js/model/MapCell.js",
 		"/C/www/traffic/maps/www.json",
-		"/C/www/flower/js/main.js",
 		"/C/www/traffic/maps/.json",
 		"/C/www/flower/index.php",
 		"/C/www/flower/js/FlowerDrawer.js",
@@ -586,7 +592,6 @@
 		"/C/www/flower/js/jqueryphp/jquery.php.js",
 		"/C/www/flower/css/main.css",
 		"/C/www/flower/js/Globals.js",
-		"/C/www/flower/js/UI.js",
 		"/C/www/flower/flowers/.htaccess",
 		"/C/www/flower/.htaccess",
 		"/C/Users/Administrator/AppData/Local/Temp/_tc/.htaccess",
@@ -649,6 +654,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"canEnterCell",
+			"Light",
+			"animationTick",
 			"occu",
 			"start",
 			"map",
@@ -714,7 +722,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -723,15 +731,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4973,
+						"buffer_size": 5137,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4179,
-								4179
+								4309,
+								4309
 							]
 						],
 						"settings":
@@ -740,10 +748,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 861.0,
+						"translation.y": 841.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -771,7 +779,7 @@
 						"translation.y": 1560.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -787,8 +795,8 @@
 						"selection":
 						[
 							[
-								43,
-								48
+								49,
+								49
 							]
 						],
 						"settings":
@@ -801,7 +809,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -810,15 +818,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3236,
+						"buffer_size": 3488,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1989,
-								1989
+								2001,
+								2001
 							]
 						],
 						"settings":
@@ -827,7 +835,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 840.0,
+						"translation.y": 1140.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -839,15 +847,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1689,
+						"buffer_size": 2547,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								145,
-								145
+								1473,
+								1473
 							]
 						],
 						"settings":
@@ -856,10 +864,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 840.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -868,15 +876,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 683,
+						"buffer_size": 686,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								271,
-								271
+								548,
+								548
 							]
 						],
 						"settings":
@@ -888,24 +896,139 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "js/view/map/cell/MapCellView.js",
+					"file": "js/controller/VehicleController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 747,
+						"buffer_size": 2923,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								370,
+								370
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/controller/HomeFinder.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2076,
+								2077
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "js/model/Map.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1305,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								416,
+								416
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "js/view/vehicle/VehicleViewCar.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								451,
+								451
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "js/view/vehicle/VehicleView.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								588
 							]
 						],
 						"settings":
@@ -918,91 +1041,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "js/controller/VehicleController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1492,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1279,
-								1279
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "js/model/Map.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1268,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								679,
-								679
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 120.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "js/model/map/cell/MapCellLight.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 169,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								139,
-								139
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]

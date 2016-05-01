@@ -11,19 +11,19 @@ var LightsController =
 
 			if( light.greenTick >= light.greenDuration )
 			{
-				light.occupied = true;
+				light.stopLight = true;
 				light.greenTick = 0;
 			}
 			if( light.redTick >= light.redDuration )
 			{
-				light.occupied = false;
+				light.stopLight = false;
 				light.redTick = 0;
 			}
 		}
 	},
 	updateLight( light, point )
 	{
-		if( light.occupied )
+		if( light.stopLight )
 		{
 			light.redTick++;
 			light.color = light.redColor;

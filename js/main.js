@@ -2,6 +2,7 @@ window.onload = function()
 {
 	var includes = 
 	[
+		"js/randomColor.js",
 		"js/model/Map.js",////////////////////////////MAP
 		"js/model/enum/MapCellType.js",
 		"js/model/map/cell/MapCell.js",
@@ -42,8 +43,12 @@ window.onload = function()
 	getScripts( includes, function(){ initApp(); } );
 };
 
+var infoTooltip;
+
 function initApp()
 {
+	infoTooltip = new Opentip($("#map-canvas"));
+	
 	setupEventListeners();
 
 	VehiclesView.init( $('#vehicle-canvas').get( 0 ) );
@@ -65,18 +70,22 @@ function mapLoaded( json )
 	MapEditor.loadMap();
 	VehicleController.loadMap();
 	VehicleController.update();
+
+	applicationUpdate();
 }
 
 var animationTick = 0;
 function applicationUpdate()
 {
 	animationTick++;
-	if( animationTick >= 10 )
+	if( animationTick >= 5 )
 	{
+		
 		animationTick = 0;
 		LightsController.update();
 		VehicleController.update();
 		MapView.draw( Map );
+		
 	}
 
 	requestAnimationFrame( applicationUpdate );
@@ -88,6 +97,7 @@ function setupEventListeners()
 	$('#map-canvas').mousemove( function( e ){ MapEditor.handleMapMouseMove( e ) } );
 	$('#map-canvas').mouseup( function( e ){ MapEditor.handleMapMouseUp( e ) } );
 	$('#clear-button').click( function( e ){ MapEditor.handleClearButtonClick( e ) } );
+	$('#reset-button').click( function( e ){ VehicleController.reset(); MapEditor.reset(); } );
 }
 
 function handleMapEditorFormSubmit() 
@@ -97,9 +107,11 @@ function handleMapEditorFormSubmit()
 		$('#save-button').html("SAVING");
 		Map.name = $( '#map-name' ).val();
 
+		tempMap = MapEditor.getCleanMap();
+
 		var values = [];
 		values.push( { name: "name", value: Map.name } );
-		values.push( { name: "json", value: JSON.stringify( Map ) } );
+		values.push( { name: "json", value: JSON.stringify( tempMap ) } );
 		$.php('php/SaveMap.php', values );
 	}
 }
