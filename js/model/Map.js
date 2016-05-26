@@ -6,7 +6,7 @@ var Map =
 	cell: 
 	{
 		offset: 1,
-		size: 20,
+		size: 10,
 		fill: true
 	},
 	cells: {},
@@ -25,6 +25,10 @@ var Map =
 		var targetCell = this.cells[ x ][ y ];
 		for (var i = 0; i < targetCell.directions.length; i++) 
 		{
+			if( direction.length == 1 && direction == targetCell.directions[i].substr( 1 ) )
+			{
+				return true;
+			}
 			if( direction == targetCell.directions[i] )
 				return true;
 		}

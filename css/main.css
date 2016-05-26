@@ -16,14 +16,11 @@
 
 #gallery 
 { 
-	position: fixed; 
-	right: 0px; 
-	top: 0px; 
 	width: 222px; 
 	padding: 5px; 
 	background-color: #222;
 	color: #FFF;
-	overflow: hidden;
+	overflow: scroll;
 	font-size: 14px;
 	max-height: 100%;
 }
@@ -82,6 +79,7 @@
 
 #main-canvas 
 { 
+	margin-left: 260px
 	width: 100%; 
 	min-height: 100%; 
 	text-align: center; 
@@ -95,11 +93,11 @@
 	height: 630px;
 }
 
-.centerer canvas
+#main-canvas canvas
 {
 	position: absolute;
     top: 0;
-    left: 0;
+    left: 300px;
 }
 
 #vehicle-canvas

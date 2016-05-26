@@ -4,9 +4,10 @@ var Vehicle =
 	type: "bicycle",
 	x: 100,
 	y: 100,
-	heading: "N",
+	heading: "NS",
 	maxSpeed: 100,
 	acceleration: 1,
 	sizeX: 1,
-	sizeY: 1
+	sizeY: 1,
+	path: []
 }

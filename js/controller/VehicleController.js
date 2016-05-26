@@ -3,6 +3,9 @@ var VehicleController =
 	view: VehiclesView,
 	map: Map,
 	finder: null,
+	carGenerationTime: 60,
+	totalCars: 100,
+	reachedEndCars: 0,
 	init()
 	{
 		this.finder = HomeFinder;
@@ -15,7 +18,7 @@ var VehicleController =
 		{
 			//make cars
 			//for (var i = 0; i < this.map.startMapCells.length; i++) 
-			for (var i = 0; i < 1; i++) 
+			for (var i = 0; i < this.totalCars; i++) 
 			{
 				var car = VehicleFactory( { type: VehicleType.CAR } );
 				Vehicles.model.push( car );
@@ -29,8 +32,15 @@ var VehicleController =
 				Vehicles.model[ i ].y = startPoint.y;
 				
 				//find path
-				Vehicles.model[ i ].path = this.finder.getPath( startCell, endCell );
-				Vehicles.model[ i ].currentPathStep = 0;
+				while( Vehicles.model[ i ].path.length == 0 )
+				{
+					endCell = this.map.endMapCells[ getRandomInt( 0, this.map.endMapCells.length - 1 ) ];
+					Vehicles.model[ i ].path = this.finder.getPath( startCell, endCell, car );
+				}
+				if( Vehicles.model[ i ].path.length == 0 )
+					_logm("no path", startCell.x, startCell.y, "|||", endCell.x, endCell.y );
+
+				Vehicles.model[ i ].currentPathStep = -1 * getRandomInt( 0, this.carGenerationTime );
 			}
 			//applicationUpdate();
 		}
@@ -47,6 +57,12 @@ var VehicleController =
 				continue;
 			
 			var nextPathStep = car.currentPathStep + 1;
+			if( nextPathStep <= 0 )
+			{
+				car.currentPathStep++;
+				continue;
+			}
+
 			if( nextPathStep < car.path.length)
 			{
 				x = car.path[ nextPathStep ][ 0 ];
@@ -56,6 +72,17 @@ var VehicleController =
 					oldX = car.path[ car.currentPathStep ][ 0 ];
 					oldY = car.path[ car.currentPathStep ][ 1 ];
 					this.map.cells[ oldX ][ oldY ].occupied = false;
+					/*
+					//make distance between cars
+					if( car.heading == "WE" )
+						this.map.cells[ oldX - 1 ][ oldY ].occupied = false;
+					if( car.heading == "EW" )
+						this.map.cells[ oldX + 1 ][ oldY ].occupied = false;
+					if( car.heading == "NS" )
+						this.map.cells[ oldX ][ oldY - 1 ].occupied = false;
+					if( car.heading == "SN" )
+						this.map.cells[ oldX ][ oldY + 1 ].occupied = false;
+					*/
 
 					var ns = "";
 					var we = "";
@@ -73,13 +100,28 @@ var VehicleController =
 					car.x = newCarPoint.x;
 					car.y = newCarPoint.y;
 					if( this.map.cells[ x ][ y ].type != MapCellType.END ) //ugly! rewrite
+					{
 						this.map.cells[ x ][ y ].occupied = true;
+						/*
+						//make distance between cars
+						if( car.heading == "WE" )
+							this.map.cells[ x - 1 ][ y ].occupied = true;
+						if( car.heading == "EW" )
+							this.map.cells[ x + 1 ][ y ].occupied = true;
+						if( car.heading == "NS" )
+							this.map.cells[ x ][ y - 1 ].occupied = true;
+						if( car.heading == "SN" )
+							this.map.cells[ x ][ y + 1 ].occupied = true;
+						*/
+					}
 					car.currentPathStep++;
 				}
 			}
 			else
 			{
 				car.reachedEnd = true;
+				this.reachedEndCars++;
+				_logm( this.reachedEndCars );
 			}
 		}
 		VehiclesView.draw( Vehicles.model );
@@ -97,9 +139,15 @@ var VehicleController =
 			Vehicles.model[ i ].y = startPoint.y;
 			
 			//find path
-			Vehicles.model[ i ].path = this.finder.getPath( startCell, endCell );
-			Vehicles.model[ i ].currentPathStep = 0;
+			while( Vehicles.model[ i ].path.length == 0 )
+			{
+				endCell = this.map.endMapCells[ getRandomInt( 0, this.map.endMapCells.length - 1 ) ];
+				Vehicles.model[ i ].path = this.finder.getPath( startCell, endCell, car );
+			}
+			Vehicles.model[ i ].currentPathStep = -1 * getRandomInt( 0, this.carGenerationTime );
 			Vehicles.model[ i ].reachedEnd = false;
 		}
+
+		this.reachedEndCars = 0;
 	}
 }

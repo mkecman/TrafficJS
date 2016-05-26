@@ -33,10 +33,8 @@
 		<![endif]-->
 
 	<div id="main-canvas">
-		<div class="centerer">
-			<canvas id="map-canvas"></canvas>
-			<canvas id="vehicle-canvas"></canvas>
-		</div>
+		<canvas id="map-canvas"></canvas>
+		<canvas id="vehicle-canvas"></canvas>
 	</div>
 
 	<div id="toolbar">
@@ -71,9 +69,9 @@
 			</ul>
 			<div id="cell-editor">
 				Duration<br/>
-				Green: <input id="green-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
-				Red: <input id="red-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
-				Delay: <input id="delay" type="numeric" onchange="MapEditor.handleLightChange()"></input>
+				Green: <input id="light-green-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
+				Red: <input id="light-red-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
+				Delay: <input id="light-start-index" type="numeric" onchange="MapEditor.handleLightChange()"></input>
 			</div>
 			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="default" required oninput="handleNameChange()"></input><br/>
 			<button id="save-button">SAVE</button>
@@ -81,12 +79,28 @@
 		</form>
 		<button id="clear-button">CLEAR MAP</button>
 		<button id="reset-button">RESET MAP</button>
-	</div>
-	<div id="gallery">
-		<div id="gallery-header">
-			<label>GALLERY</label>
+		<hr/>
+		<hr/>
+
+		<div id="gallery">
+			<div id="gallery-header">
+				<label>GALLERY</label>
+				<?php
+
+					$maps = '';
+					$files = scandir( "./maps" );
+					foreach ($files as $key => $value) 
+					{
+						$maps .= '<p onclick="loadMap('. "'" . $value . "'" . ')">' . $value . '</p>';
+					}
+					
+					print $maps;
+				?>
+			</div>
 		</div>
+
 	</div>
+	
 <?php
 $version = file_get_contents( "version" );
 

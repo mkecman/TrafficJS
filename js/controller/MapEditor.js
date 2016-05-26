@@ -25,9 +25,9 @@ var MapEditor =
 				if( cell.type == MapCellType.LIGHT )
 				{
 					this.currentCell = cell;
-					$('#green-duration').val( this.currentCell.greenDuration );
-					$('#red-duration').val( this.currentCell.redDuration );
-					$('#delay').val( this.currentCell.delay );
+					$('#light-green-duration').val( this.currentCell.greenDuration );
+					$('#light-red-duration').val( this.currentCell.redDuration );
+					$('#light-start-index').val( this.currentCell.delay );
 				}
 			}
 		}
@@ -65,9 +65,9 @@ var MapEditor =
 	},
 	handleLightChange()
 	{
-		this.currentCell.greenDuration = parseInt( $('#green-duration').val() );
-		this.currentCell.redDuration = parseInt( $('#red-duration').val() );
-		this.currentCell.delay = parseInt( $('#delay').val() );
+		this.currentCell.greenDuration = parseInt( $('#light-green-duration').val() );
+		this.currentCell.redDuration = parseInt( $('#light-red-duration').val() );
+		this.currentCell.startIndex = parseInt( $('#light-start-index').val() );
 	},
 	getMouseCell( event )
 	{
@@ -82,15 +82,20 @@ var MapEditor =
 	generateEmptyMap()
 	{
 		var total = 0;
-		var width = 100;//this.map.sizeX;
-		var height = 100; //this.map.sizeY;
+		this.map.sizeX = 100;
+		this.map.sizeY = 100;
+
+		var width = this.map.sizeX;
+		var height = this.map.sizeY;
+
 		this.map.cells = {};
 		for( var indexWidth = 0; indexWidth < width; indexWidth++ ) 
 		{
 			this.map.cells[ indexWidth ] = {};
 			for( var indexHeight = 0; indexHeight < height; indexHeight++ )
 			{
-				this.map.cells[ indexWidth ][ indexHeight ] = MapCellFactory( { id: total, x: indexWidth, y: indexHeight, type: MapCellType.ROAD, directions: [ "WE", "EW", "NS", "SN" ] } );
+				//this.map.cells[ indexWidth ][ indexHeight ] = MapCellFactory( { id: total, x: indexWidth, y: indexHeight, type: MapCellType.ROAD, directions: [ "WE", "EW", "NS", "SN" ] } );
+				this.map.cells[ indexWidth ][ indexHeight ] = MapCellFactory( { id: total, x: indexWidth, y: indexHeight, type: MapCellType.BLOCK } );
 				total++;
 			}
 		}
@@ -127,7 +132,13 @@ var MapEditor =
 				{
 					cell.greenTick = 0;
 					cell.redTick = 0;
-					cell.delayTick = cell.delay;
+					cell.tick = cell.startIndex;
+					cell.stopLight = false;
+				}
+
+				if( cell.stopLight != undefined )
+				{
+					cell.stopLight = false;
 				}
 			}
 		}

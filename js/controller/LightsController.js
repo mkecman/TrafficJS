@@ -7,7 +7,12 @@ var LightsController =
 		{
 			var lightPoint = this.map.lightsMapCells[i];
 			var light = this.map.cells[ lightPoint.x ][ lightPoint.y ];
-			
+			light.tick = light.startIndex;
+			light.pattern = [];
+			for (var lightIndex = 0; lightIndex < light.redDuration; lightIndex++) 
+				light.pattern.push( "red" );
+			for (lightIndex = 0; lightIndex < light.greenDuration; lightIndex++) 
+				light.pattern.push( "green" );
 		}
 	},
 	update()
@@ -16,36 +21,24 @@ var LightsController =
 		{
 			var lightPoint = this.map.lightsMapCells[i];
 			var light = this.map.cells[ lightPoint.x ][ lightPoint.y ];
-			if( light.delayTick > 0 )
-			{
-				light.delayTick--;
-				continue;
-			}
-
-			this.updateLight( light, lightPoint );
-			if( light.greenTick >= light.greenDuration )
-			{
-				light.stopLight = true;
-				light.greenTick = 0;
-			}
-			if( light.redTick >= light.redDuration )
-			{
+			
+			if( light.pattern[ light.tick ] == "green" )
 				light.stopLight = false;
-				light.redTick = 0;
+			
+			if( light.pattern[ light.tick ] == "red" )
+				light.stopLight = true;
+
+			if( light.stopLight )
+				light.color = light.redColor;
+			else
+				light.color = light.greenColor;
+
+			light.tick++;
+
+			if( light.tick >= light.pattern.length )
+			{
+				light.tick = 0;
 			}
-		}
-	},
-	updateLight( light, point )
-	{
-		if( light.stopLight )
-		{
-			light.redTick++;
-			light.color = light.redColor;
-		}
-		else
-		{
-			light.greenTick++;
-			light.color = light.greenColor;
 		}
 	}
 }

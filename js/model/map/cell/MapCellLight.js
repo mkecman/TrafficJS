@@ -5,9 +5,9 @@ var MapCellLight =
 	greenColor: "#00FF00",
 	occupied: false,
 	stopLight: false,
-	delay: 0,
+	startIndex: 0,
 	greenDuration: 5,
 	redDuration: 15,
-	greenTick: 0,
-	redTick: 0
+	tick: 0,
+	pattern: []
 }

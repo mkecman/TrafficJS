@@ -66,30 +66,48 @@ var HomeFinder =
 PF.Grid.prototype.getNeighbors = function(node, diagonalMovement) {
     var x = node.x,
         y = node.y,
+        parent = node.parent,
         neighbors = [],
         s0 = false, d0 = false,
         s1 = false, d1 = false,
         s2 = false, d2 = false,
         s3 = false, d3 = false,
+        fromDirection = "",
         nodes = this.nodes;
 
+    if( parent )
+    {
+        // ↓
+        if( parent.x == x && parent.y > y )
+            fromDirection = "S";
+        // ↑
+        if( parent.x == x && parent.y < y )
+            fromDirection = "N";
+        // →
+        if( parent.x > x && parent.y == y )
+            fromDirection = "E";
+        // ←
+        if( parent.x < x && parent.y == y )
+            fromDirection = "W";
+    }
+
     // ↑
-    if ( this.isAllowed( x, y, "SN") && this.isWalkableAt(x, y - 1, "SN" ) ) {
+    if ( this.isAllowed( x, y, fromDirection + "N") && this.isWalkableAt(x, y - 1 ) ) {
         neighbors.push(nodes[y - 1][x]);
         s0 = true;
     }
     // →
-    if (this.isAllowed( x, y, "WE") && this.isWalkableAt(x + 1, y, "WE" )) {
+    if (this.isAllowed( x, y, fromDirection + "E") && this.isWalkableAt(x + 1, y )) {
         neighbors.push(nodes[y][x + 1]);
         s1 = true;
     }
     // ↓
-    if (this.isAllowed( x, y, "NS") && this.isWalkableAt(x, y + 1, "NS" )) {
+    if (this.isAllowed( x, y, fromDirection + "S") && this.isWalkableAt(x, y + 1 )) {
         neighbors.push(nodes[y + 1][x]);
         s2 = true;
     }
     // ←
-    if (this.isAllowed( x, y, "EW") && this.isWalkableAt(x - 1, y, "EW" )) {
+    if (this.isAllowed( x, y, fromDirection + "W") && this.isWalkableAt(x - 1, y )) {
         neighbors.push(nodes[y][x - 1]);
         s3 = true;
     }
@@ -144,7 +162,7 @@ PF.Grid.prototype.getNeighbors = function(node, diagonalMovement) {
  * @param {number} y - The y coordinate of the node.
  * @return {boolean} - The walkability of the node.
  */
-PF.Grid.prototype.isWalkableAt = function( x, y, direction ) {
+PF.Grid.prototype.isWalkableAt = function( x, y ) {
     return this.isInside(x, y) && this.nodes[y][x].walkable;
 };
 

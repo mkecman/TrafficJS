@@ -51,13 +51,11 @@ function initApp()
 	infoTooltip = new Opentip($("#map-canvas") );
 	
 	setupEventListeners();
+}
 
-	VehiclesView.init( $('#vehicle-canvas').get( 0 ) );
-	MapView.init( $('#map-canvas').get( 0 ) );
-
-	VehicleController.init();
-	
-	$.getJSON('maps/default.json', function(json, textStatus) 
+function loadMap( path )
+{
+	$.getJSON( 'maps/' + path, function( json, textStatus ) 
 	{
 		mapLoaded( json );
 	});
@@ -67,6 +65,11 @@ function mapLoaded( json )
 {
 	$.extend( true, Map, json );
 	Map.findMapCells();
+	$( '#map-name' ).val( Map.name );
+
+	VehiclesView.init( $('#vehicle-canvas').get( 0 ) );
+	MapView.init( $('#map-canvas').get( 0 ) );
+	VehicleController.init();
 
 	MapEditor.loadMap();
 	VehicleController.loadMap();
@@ -80,7 +83,7 @@ var animationTick = 0;
 function applicationUpdate()
 {
 	animationTick++;
-	if( animationTick >= 30 )
+	if( animationTick >= 5 )
 	{
 		
 		animationTick = 0;
