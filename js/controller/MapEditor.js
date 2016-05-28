@@ -27,7 +27,7 @@ var MapEditor =
 					this.currentCell = cell;
 					$('#light-green-duration').val( this.currentCell.greenDuration );
 					$('#light-red-duration').val( this.currentCell.redDuration );
-					$('#light-start-index').val( this.currentCell.delay );
+					$('#light-start-index').val( this.currentCell.startIndex );
 				}
 			}
 		}

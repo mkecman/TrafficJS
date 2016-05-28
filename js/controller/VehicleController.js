@@ -3,8 +3,8 @@ var VehicleController =
 	view: VehiclesView,
 	map: Map,
 	finder: null,
-	carGenerationTime: 60,
-	totalCars: 100,
+	carGenerationTime: 500,
+	totalCars: 500,
 	reachedEndCars: 0,
 	init()
 	{

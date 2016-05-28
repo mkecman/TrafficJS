@@ -83,7 +83,7 @@ var animationTick = 0;
 function applicationUpdate()
 {
 	animationTick++;
-	if( animationTick >= 5 )
+	if( animationTick >= 1 )
 	{
 		
 		animationTick = 0;
