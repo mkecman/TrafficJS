@@ -20,6 +20,7 @@ window.onload = function()
 		"js/view/map/cell/MapCellViewStart.js",
 		"js/view/map/cell/MapCellViewEnd.js",
 		"js/view/map/MapView.js",
+		"js/view/map/editor/MapEditorSelectionView.js",
 		"js/controller/MapEditor.js",
 		"js/controller/HomeFinder.js",
 		"js/pathfinding/pathfinding-browser.min.js",
@@ -51,6 +52,8 @@ function initApp()
 	infoTooltip = new Opentip($("#map-canvas") );
 	
 	setupEventListeners();
+
+	//this.loadMap( "bulevar2.json" );
 }
 
 function loadMap( path )
@@ -69,6 +72,7 @@ function mapLoaded( json )
 
 	VehiclesView.init( $('#vehicle-canvas').get( 0 ) );
 	MapView.init( $('#map-canvas').get( 0 ) );
+	MapEditorSelectionView.init( $('#selection-canvas').get( 0 ) );
 	VehicleController.init();
 
 	MapEditor.loadMap();
@@ -103,6 +107,7 @@ function setupEventListeners()
 	$('#map-canvas').mouseup( function( e ){ MapEditor.handleMapMouseUp( e ) } );
 	$('#clear-button').click( function( e ){ MapEditor.handleClearButtonClick( e ) } );
 	$('#reset-button').click( function( e ){ VehicleController.reset(); MapEditor.reset(); } );
+	$('#copy-button').click( function( e ){ MapEditor.copySelection() } );
 }
 
 function handleMapEditorFormSubmit() 

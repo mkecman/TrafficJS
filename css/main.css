@@ -104,6 +104,10 @@
 { 
 	pointer-events:none;
 } 
+#selection-canvas
+{ 
+	pointer-events:none;
+} 
 
 #map-name,#flower-author
 {
@@ -160,6 +164,20 @@ ul li {
 
 ul li:last-child {
     border-bottom: none
+}
+
+button
+{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;
+	border-style:none; 
+	color: #ffffff;
+	font-size: 12px;
+	background: #467bca;
+	padding: 5px 5px 5px 5px;
+	margin-top: 10px;
+	text-decoration: none;
 }
 
 input 

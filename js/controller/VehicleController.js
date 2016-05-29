@@ -32,11 +32,11 @@ var VehicleController =
 				Vehicles.model[ i ].y = startPoint.y;
 				
 				//find path
-				while( Vehicles.model[ i ].path.length == 0 )
-				{
+				//while( Vehicles.model[ i ].path.length == 0 )
+				//{
 					endCell = this.map.endMapCells[ getRandomInt( 0, this.map.endMapCells.length - 1 ) ];
 					Vehicles.model[ i ].path = this.finder.getPath( startCell, endCell, car );
-				}
+				//}
 				if( Vehicles.model[ i ].path.length == 0 )
 					_logm("no path", startCell.x, startCell.y, "|||", endCell.x, endCell.y );
 
@@ -121,7 +121,7 @@ var VehicleController =
 			{
 				car.reachedEnd = true;
 				this.reachedEndCars++;
-				_logm( this.reachedEndCars );
+				$('#cars-count-div').html( "Passed cars count: " + this.reachedEndCars );
 			}
 		}
 		VehiclesView.draw( Vehicles.model );

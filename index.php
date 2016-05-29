@@ -35,11 +35,13 @@
 	<div id="main-canvas">
 		<canvas id="map-canvas"></canvas>
 		<canvas id="vehicle-canvas"></canvas>
+		<canvas id="selection-canvas"></canvas>
 	</div>
 
 	<div id="toolbar">
 		<label>TOOLBAR</label><br/>
-		<input type="checkbox" id="map-editor-enabled">Map Editor Enabled</input>
+		<input type="radio" name="map-editor-enabled" value="false" checked="checked">Select</input>
+		<input type="radio" name="map-editor-enabled" value="true">Edit</input>
 		<form id="map-editor-form" onsubmit="handleMapEditorFormSubmit(); return false;">
 			<input type="radio" name="map-editor-cell-type" value="Road" checked="checked">Road</input>
 			<input type="radio" name="map-editor-cell-type" value="Light">Traffic Light</input>
@@ -79,7 +81,9 @@
 		</form>
 		<button id="clear-button">CLEAR MAP</button>
 		<button id="reset-button">RESET MAP</button>
+		<button id="copy-button">Copy</button>
 		<hr/>
+		<div id="cars-count-div"></div>
 		<hr/>
 
 		<div id="gallery">
