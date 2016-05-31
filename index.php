@@ -44,6 +44,7 @@
 		<input type="radio" name="map-editor-enabled" value="true">Edit</input>
 		<form id="map-editor-form" onsubmit="handleMapEditorFormSubmit(); return false;">
 			<input type="radio" name="map-editor-cell-type" value="Road" checked="checked">Road</input>
+			<input type="radio" name="map-editor-cell-type" value="CrossRoad">CrossRoad</input>
 			<input type="radio" name="map-editor-cell-type" value="Light">Traffic Light</input>
 			<input type="radio" name="map-editor-cell-type" value="Block">Block</input><br/>
 			<input type="radio" name="map-editor-cell-type" value="Start">Start</input>
@@ -70,17 +71,19 @@
 				<li><img id="SE" src="img/directions/SE.png" /><input type="checkbox" name="map-editor-cell-direction" value="SE">SE</input></li>
 			</ul>
 			<div id="cell-editor">
-				Duration<br/>
+				Traffic Light Setup<br/>
 				Green: <input id="light-green-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
 				Red: <input id="light-red-duration" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
-				Delay: <input id="light-start-index" type="numeric" onchange="MapEditor.handleLightChange()"></input>
+				StartAt: <input id="light-start-index" type="numeric" onchange="MapEditor.handleLightChange()"></input><br />
+				CrossRoad<br/>
+				Id: <input id="crossroad-id" type="numeric" onchange="MapEditor.handleCrossRoadChange()"></input><br />
 			</div>
 			<input id="map-name" name="name" placeholder="Name Your Map" title="2 characters minimum" pattern=".{2,255}" value="default" required oninput="handleNameChange()"></input><br/>
 			<button id="save-button">SAVE</button>
 			<hr/>
 		</form>
 		<button id="clear-button">CLEAR MAP</button>
-		<button id="reset-button">RESET MAP</button>
+		<button id="reset-button">RESET CARS</button>
 		<button id="copy-button">Copy</button>
 		<hr/>
 		<div id="cars-count-div"></div>

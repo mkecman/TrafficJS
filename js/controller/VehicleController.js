@@ -2,9 +2,10 @@ var VehicleController =
 {
 	view: VehiclesView,
 	map: Map,
+	mapController: MapController,
 	finder: null,
-	carGenerationTime: 500,
-	totalCars: 500,
+	carGenerationTime: 100,
+	totalCars: 1000,
 	reachedEndCars: 0,
 	init()
 	{
@@ -27,7 +28,7 @@ var VehicleController =
 				var endCell = this.map.endMapCells[ getRandomInt( 0, this.map.endMapCells.length - 1 ) ];
 
 				//reset vehicle position
-				var startPoint = this.map.getPixelPosition( startCell.x, startCell.y );
+				var startPoint = this.mapController.getPixelPosition( startCell.x, startCell.y );
 				Vehicles.model[ i ].x = startPoint.x;
 				Vehicles.model[ i ].y = startPoint.y;
 				
@@ -67,10 +68,10 @@ var VehicleController =
 			{
 				x = car.path[ nextPathStep ][ 0 ];
 				y = car.path[ nextPathStep ][ 1 ];
-				if( this.map.canEnterCellRealTime( x, y ) )
+				oldX = car.path[ car.currentPathStep ][ 0 ];
+				oldY = car.path[ car.currentPathStep ][ 1 ];
+				if( this.mapController.canEnterCellRealTime( oldX, oldY, x, y ) )
 				{
-					oldX = car.path[ car.currentPathStep ][ 0 ];
-					oldY = car.path[ car.currentPathStep ][ 1 ];
 					this.map.cells[ oldX ][ oldY ].occupied = false;
 					/*
 					//make distance between cars
@@ -96,7 +97,7 @@ var VehicleController =
 						ns = "SN"; //↑
 					car.heading = ns + we;
 
-					var newCarPoint = this.map.getPixelPosition( x, y );
+					var newCarPoint = this.mapController.getPixelPosition( x, y );
 					car.x = newCarPoint.x;
 					car.y = newCarPoint.y;
 					if( this.map.cells[ x ][ y ].type != MapCellType.END ) //ugly! rewrite
@@ -134,7 +135,7 @@ var VehicleController =
 			var endCell = this.map.endMapCells[ getRandomInt( 0, this.map.endMapCells.length - 1 ) ];
 			
 			//reset vehicle position
-			var startPoint = this.map.getPixelPosition( startCell.x, startCell.y );
+			var startPoint = this.mapController.getPixelPosition( startCell.x, startCell.y );
 			Vehicles.model[ i ].x = startPoint.x;
 			Vehicles.model[ i ].y = startPoint.y;
 			

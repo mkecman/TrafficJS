@@ -9,20 +9,20 @@ window.onload = function()
 		"js/model/map/cell/MapCellBlock.js",
 		"js/model/map/cell/MapCellLight.js",
 		"js/model/map/cell/MapCellRoad.js",
+		"js/model/map/cell/MapCellCrossRoad.js",
 		"js/model/map/cell/MapCellEnd.js",
 		"js/model/map/cell/MapCellStart.js",
 		"js/factory/MapCellFactory.js",
 		"js/factory/MapCellViewFactory.js",
 		"js/view/map/cell/MapCellView.js",
 		"js/view/map/cell/MapCellViewRoad.js",
+		"js/view/map/cell/MapCellViewCrossRoad.js",
 		"js/view/map/cell/MapCellViewBlock.js",
 		"js/view/map/cell/MapCellViewLight.js",
 		"js/view/map/cell/MapCellViewStart.js",
 		"js/view/map/cell/MapCellViewEnd.js",
 		"js/view/map/MapView.js",
 		"js/view/map/editor/MapEditorSelectionView.js",
-		"js/controller/MapEditor.js",
-		"js/controller/HomeFinder.js",
 		"js/pathfinding/pathfinding-browser.min.js",
 		"js/model/enum/VehicleType.js", /////////////////////VEHICLE
 		"js/model/vehicle/Vehicle.js",
@@ -37,6 +37,10 @@ window.onload = function()
 		"js/view/vehicle/VehicleViewBicycle.js",
 		"js/view/vehicle/VehicleViewCar.js",
 		"js/view/vehicle/VehicleViewBus.js",
+		"js/controller/CrossRoadController.js",
+		"js/controller/MapController.js",
+		"js/controller/MapEditor.js",
+		"js/controller/HomeFinder.js",
 		"js/controller/VehicleController.js",
 		"js/controller/LightsController.js"
 	];
@@ -67,7 +71,7 @@ function loadMap( path )
 function mapLoaded( json )
 {
 	$.extend( true, Map, json );
-	Map.findMapCells();
+	MapController.findMapCells();
 	$( '#map-name' ).val( Map.name );
 
 	VehiclesView.init( $('#vehicle-canvas').get( 0 ) );

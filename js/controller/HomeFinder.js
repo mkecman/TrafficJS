@@ -1,6 +1,7 @@
 var HomeFinder = 
 {
 	map: null,
+    mapController: MapController,
 	mapMatrix: null,
 	finder: null,
 	grid: null,
@@ -168,7 +169,7 @@ PF.Grid.prototype.isWalkableAt = function( x, y ) {
 
 PF.Grid.prototype.isAllowed = function( x, y, direction ) 
 {
-    if( Map.canMoveFromCell( x, y, direction ) )
+    if( MapController.canMoveFromCell( x, y, direction ) )
     	return true;
   	else
     	return false;

@@ -459,7 +459,7 @@
 			"file": "js/controller/VehicleController.js",
 			"settings":
 			{
-				"buffer_size": 4563,
+				"buffer_size": 4564,
 				"line_ending": "Windows"
 			}
 		},
@@ -559,7 +559,6 @@
 		"/C/www/traffic/js/model/map",
 		"/C/www/traffic/js/model/map/cell",
 		"/C/www/traffic/js/model/vehicle",
-		"/C/www/traffic/js/pathfinding/finders",
 		"/C/www/traffic/js/view",
 		"/C/www/traffic/js/view/map",
 		"/C/www/traffic/js/view/map/cell",
@@ -933,15 +932,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4563,
+						"buffer_size": 4564,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								111,
-								111
+								114,
+								114
 							]
 						],
 						"settings":
@@ -1008,7 +1007,7 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},

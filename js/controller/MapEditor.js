@@ -50,7 +50,6 @@ var MapEditor =
 				return;
 			}
 
-
 			this.mouseActive = true;
 			infoTooltip.show();
 
@@ -74,19 +73,24 @@ var MapEditor =
 					$('input:checkbox[value='+ cell.directions[ i ] +']')[0].checked = true;
 				}
 				
-				if( cell.type == MapCellType.LIGHT )
+				switch( cell.type )
 				{
-					this.currentCell = cell;
-					$('#light-green-duration').val( this.currentCell.greenDuration );
-					$('#light-red-duration').val( this.currentCell.redDuration );
-					$('#light-start-index').val( this.currentCell.startIndex );
-				}
-				else
-				{
-					this.currentCell = null;
-					$('#light-green-duration').val( "" );
-					$('#light-red-duration').val( "" );
-					$('#light-start-index').val( "" );
+					case MapCellType.LIGHT:
+						this.currentCell = cell;
+						$('#light-green-duration').val( this.currentCell.greenDuration );
+						$('#light-red-duration').val( this.currentCell.redDuration );
+						$('#light-start-index').val( this.currentCell.startIndex );
+					break;
+					case MapCellType.CROSSROAD:
+						this.currentCell = cell;
+						$('#crossroad-id').val( this.currentCell.crossroadId );
+					break;
+					default:
+						this.currentCell = null;
+						$('#light-green-duration').val( "" );
+						$('#light-red-duration').val( "" );
+						$('#light-start-index').val( "" );
+						$('#crossroad-id').val( "" );
 				}
 			}
 			this.handleMapMouseMove( e ); 
@@ -146,6 +150,19 @@ var MapEditor =
 			this.currentCell.greenDuration = parseInt( $('#light-green-duration').val() );
 			this.currentCell.redDuration = parseInt( $('#light-red-duration').val() );
 			this.currentCell.startIndex = parseInt( $('#light-start-index').val() );
+		}
+	},
+	handleCrossRoadChange()
+	{
+		for( var x = this.startPoint.x; x < this.endPoint.x; x++ )
+		{
+			for( var y = this.startPoint.y; y < this.endPoint.y; y++ )
+			{
+				if( this.map.cells[ x ][ y ].type == MapCellType.CROSSROAD )
+				{
+					this.map.cells[ x ][ y ].crossroadId = parseInt( $('#crossroad-id').val() );
+				}
+			}
 		}
 	},
 	getMouseCell( event )
